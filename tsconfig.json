@@ -1,34 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "strict": true,
-    "esModuleInterop": true,
+    "target": "ESNext",
+    "module": "CommonJS",
+    "strict": false,
+    "noImplicitAny": false,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
-    "rootDir": "./src"
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"],
-  "configurations": [
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Launch Program",
-      "program": "${workspaceFolder}/src/index.ts",
-      "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
-    }
-  ],
-  "inputs": [
-    {
-      "type": "promptString",
-      "id": "programPath",
-      "description": "Path to the program"
-    }
-  ],
-  "version": "0.2.0"
+  "exclude": ["node_modules"]
 }
-
-
