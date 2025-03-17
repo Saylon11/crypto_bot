@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import axios from 'axios';
+import { Connection, Transaction } from '@solana/web3.js';
 
 // Explicit URLs imported from .env
 export const QUICKNODE_RPC_URL = process.env.QUICKNODE_RPC_URL!;
@@ -118,6 +119,38 @@ export async function executeSwap(
 
   } catch (error) {
     console.error("🚨 Swap execution error:", error);
+    throw error;
+  }
+}
+
+// Submit JITO bundle transaction
+export async function submitJitoBundle(transactions: Transaction[]) {
+  const connection = new Connection(QUICKNODE_RPC_URL, { commitment: 'confirmed' });
+
+  try {
+    const serializedTransactions = transactions.map(tx => tx.serialize().toString('base64'));
+
+    const payload = {
+      jsonrpc: '2.0',
+      id: 1,
+      method: 'sendBundle',
+      params: { transactions: serializedTransactions },
+    };
+
+    const response = await axios.post(QUICKNODE_RPC_URL, payload, {
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.data.error) {
+      console.error('🚨 JITO Bundle Submission Error:', response.data.error);
+      throw new Error(response.data.error.message);
+    }
+
+    console.log('✅ JITO Bundle Submitted:', response.data.result);
+    return response.data.result;
+
+  } catch (error) {
+    console.error('🚨 JITO API Error:', error);
     throw error;
   }
 }
