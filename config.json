@@ -1,0 +1,13 @@
+{
+  "inputMint": "string",
+  "outputMint": "string",
+  "amount": "number",
+  "slippage": "number",
+  "maxTradeSize": "number",
+  "volumeThreshold": "number",
+  "liquidityThreshold": "number",
+  "priceThreshold": "number",
+  "tokenAddress": "string",
+  "mint": "string",
+  "tradeType": "string"
+}
