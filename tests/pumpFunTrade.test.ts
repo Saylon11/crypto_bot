@@ -1,4 +1,4 @@
-import { executePumpFunSwap } from "../src/qnAPI";
+import { executePumpFunSwap } from "../src/qnAPI.js";
 
 (async () => {
   try {

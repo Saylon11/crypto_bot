@@ -73,7 +73,7 @@ export interface Config {
   slippage: number;
   maxTradeSize: number;
   volumeThreshold: number;
-  liquidityThreshold: number;
+  minimumLiquidity: number;
   priceThreshold: number;
   tokenAddress: string;
   mint: string;
@@ -105,4 +105,5 @@ export interface CommandLineArgs {
   amount?: number;
   slippage?: number;
   test?: boolean;
+  strategy?: "pumpfun" | "longterm";
 }
