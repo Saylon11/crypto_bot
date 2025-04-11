@@ -10,13 +10,15 @@ import axios from "axios";
 import bs58 from "bs58";
 // import WebSocket from "ws";
 // import { executeSwapTransaction } from "./utils/transactionUtils.js";
-import type { LiquidityPool } from "./types.js"; // Import custom types
+import type { LiquidityPool, TokenReport, NewToken } from "./types.js"; // Import custom types
 
 dotenv.config();
 
 export const QUICKNODE_RPC_URL = process.env.QUICKNODE_RPC_ENDPOINT!;
 export const METIS_JUPITER_API_URL = process.env.METIS_JUPITER_SWAP_API!;
 export const WALLET_SECRET_KEY = process.env.WALLET_SECRET_KEY!;
+export const RUGCHECK_API_URL = process.env.RUGCHECK_API_URL!;
+export const RUGCHECK_API_KEY = process.env.RUGCHECK_API_KEY!;
 
 if (!QUICKNODE_RPC_URL || typeof QUICKNODE_RPC_URL !== "string") {
   throw new Error(
@@ -322,5 +324,66 @@ export async function sendJitoBundle(
   } catch (error) {
     console.error("🚨 Failed to send Jito bundle:", error);
     return { success: false };
+  }
+}
+
+// RugCheck.xyz API Integration
+
+/**
+ * Authenticates with RugCheck.xyz and retrieves a JWT token.
+ * @returns The JWT token as a string.
+ */
+export async function authenticateRugCheck(): Promise<string> {
+  try {
+    const response = await axios.post(`${RUGCHECK_API_URL}/authenticate`, {
+      apiKey: RUGCHECK_API_KEY,
+    });
+    return response.data.token;
+  } catch (error) {
+    console.error("🚨 Error authenticating with RugCheck:", error);
+    throw error;
+  }
+}
+
+/**
+ * Fetches the token report from RugCheck.xyz.
+ * @param tokenAddress The address of the token to fetch the report for.
+ * @returns The token report as an object.
+ */
+export async function getTokenReport(
+  tokenAddress: string,
+): Promise<TokenReport> {
+  const token = await authenticateRugCheck();
+  try {
+    const response = await axios.get<TokenReport>(
+      `${RUGCHECK_API_URL}/token/${tokenAddress}`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      },
+    );
+    return response.data;
+  } catch (error) {
+    console.error("🚨 Error fetching token report from RugCheck:", error);
+    throw error;
+  }
+}
+
+/**
+ * Fetches new tokens from RugCheck.xyz.
+ * @returns An array of new tokens.
+ */
+export async function getNewTokens(): Promise<NewToken[]> {
+  const token = await authenticateRugCheck();
+  try {
+    const response = await axios.get<NewToken[]>(
+      `${RUGCHECK_API_URL}/tokens/new`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      },
+    );
+    return response.data;
+  } catch (error) {
+    console.error("🚨 Error fetching new tokens from RugCheck:", error);
+    throw error;
   }
 }

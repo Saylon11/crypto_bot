@@ -2,12 +2,18 @@ import fs from "fs";
 import dotenv from "dotenv";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import { executePumpFunSwap, getLiquidityPools } from "./qnAPI.js";
+import {
+  executePumpFunSwap,
+  getLiquidityPools,
+  authenticateRugCheck,
+  getTokenReport,
+} from "./qnAPI.js"; // Import custom types
 import type {
   TradeData,
   CommandLineArgs,
   Config,
   LiquidityPool,
+  TokenReport, // Import TokenReport type
 } from "./types.js"; // Import custom types
 import { pumpFunStrategy } from "../strategies/pumpFunStrategy.js";
 import { longTermStrategy } from "../strategies/longTermStrategy.js";
@@ -47,6 +53,13 @@ export async function shouldSnipe(tradeData: TradeData): Promise<boolean> {
   const config = readConfig();
   const { mint, volume, price } = tradeData;
 
+  const jwtToken = await authenticateRugCheck(); // Authenticate and retrieve JWT token
+  // Planned for future RugCheck API expansions.
+  console.log("🔑 RugCheck JWT token retrieved.");
+
+  const tokenReport: TokenReport = await getTokenReport(mint); // Get RugCheck token report with explicit type
+  console.log(`🔍 RugCheck report for token ${mint}:`, tokenReport);
+
   const liquidityPools = await getLiquidityPools();
   const tokenLiquidity = liquidityPools.reduce(
     (total: number, pool: LiquidityPool) => total + pool.liquidity,
@@ -56,6 +69,8 @@ export async function shouldSnipe(tradeData: TradeData): Promise<boolean> {
   const volumeIncrease = volume > config.volumeThreshold;
   const priceSpike = price > config.priceThreshold;
   const sufficientLiquidity = tokenLiquidity > config.minimumLiquidity;
+  const isRisky =
+    tokenReport.riskAssessment === "high" || tokenReport.scamReports > 0;
 
   console.log(`🔍 Analyzing token ${mint}:`);
   console.log(`  Volume Increase: ${volumeIncrease}`);
@@ -63,14 +78,17 @@ export async function shouldSnipe(tradeData: TradeData): Promise<boolean> {
   console.log(
     `  Sufficient Liquidity: ${sufficientLiquidity} (Liquidity: ${tokenLiquidity}, Min: ${config.minimumLiquidity})`,
   );
+  console.log(
+    `  RugCheck Risk Assessment: ${isRisky ? "High Risk" : "Low Risk"}`,
+  );
 
-  return volumeIncrease && priceSpike && sufficientLiquidity;
+  return volumeIncrease && priceSpike && sufficientLiquidity && !isRisky;
 }
 
 // These variables are planned for use with executeTradeFlow and logTradeStatistics in future phases.
-let totalTrades: number = 0;
-let successfulTrades: number = 0;
-let totalExecutionTime: number = 0;
+let totalTrades: number = 0; // Planned for detailed future trade statistics tracking.
+let successfulTrades: number = 0; // Planned for detailed future trade statistics tracking.
+let totalExecutionTime: number = 0; // Planned for detailed future trade statistics tracking.
 
 /**
  * Executes a trade flow for a given input and output mint.
@@ -133,69 +151,20 @@ function logTradeDetails(
   console.log(`  Profit/Loss: ${profitOrLoss.toFixed(2)}`);
 }
 
-// Planned for future trade analysis phases.
-// function logTradeStatistics() {
-//   const successRate = (successfulTrades / totalTrades) * 100 || 0;
-//   const averageExecutionTime = totalExecutionTime / totalTrades || 0;
-//
-//   console.log("📈 Trade Statistics:");
-//   console.log(`  Total Trades: ${totalTrades}`);
-//   console.log(`  Successful Trades: ${successfulTrades}`);
-//   console.log(`  Success Rate: ${successRate.toFixed(2)}%`);
-//   console.log(
-//     `  Average Execution Time: ${averageExecutionTime.toFixed(2)} ms`,
-//   );
-// }
-
-// Planned for future testing purposes and validation.
-// async function testShouldSnipe() {
-//   console.log("🧪 Starting test for shouldSnipe logic...");
-
-//   // Sample mock TradeData
-//   const mockTradeData: TradeData[] = [
-//     {
-//       mint: "So11111111111111111111111111111111111111112",
-//       volume: 600, // Above the volume threshold
-//       price: 2.0, // Above the price threshold
-//     },
-//     {
-//       mint: "So11111111111111111111111111111111111111113",
-//       volume: 300, // Below the volume threshold
-//       price: 1.0, // Below the price threshold
-//     },
-//     {
-//       mint: "So11111111111111111111111111111111111111114",
-//       volume: 700, // Above the volume threshold
-//       price: 1.8, // Above the price threshold
-//     },
-//   ];
-
-//   for (const tradeData of mockTradeData) {
-//     console.log(`🔍 Testing TradeData: ${JSON.stringify(tradeData)}`);
-//     const isSnipeCandidate = await shouldSnipe(tradeData);
-//     console.log(
-//       `  Result: ${
-//         isSnipeCandidate
-//           ? "✅ Meets sniping criteria"
-//           : "❌ Does not meet sniping criteria"
-//       }`,
-//     );
-//   }
-
-//   console.log("🎉 Test for shouldSnipe logic completed!");
-// }
-
 /**
  * Main function to run the bot in a structured sequence.
  */
 async function main() {
   const argv: CommandLineArgs = (await yargs(hideBin(process.argv))
-    .option("inputMint", { type: "string" })
-    .option("outputMint", { type: "string" })
-    .option("amount", { type: "number" })
+    .option("inputMint", { type: "string", demandOption: true })
+    .option("outputMint", { type: "string", demandOption: true })
+    .option("amount", { type: "number", demandOption: true })
     .option("slippage", { type: "number" })
-    .option("strategy", { type: "string", choices: ["pumpfun", "longterm"] }) // Add strategy option
-    // TODO: Ensure 'strategy' is explicitly defined in the CommandLineArgs type in types.js
+    .option("strategy", {
+      type: "string",
+      choices: ["pumpfun", "longterm"],
+      demandOption: true,
+    }) // Add strategy option
     .option("test", { type: "boolean" })
     .help().argv) as CommandLineArgs;
 
@@ -207,11 +176,6 @@ async function main() {
   const config = readConfig() as Config;
   const inputMint = argv.inputMint || config.tokenAddress;
   const amount = argv.amount || config.amount;
-
-  if (!argv.strategy) {
-    console.error("🚨 Missing required parameter: --strategy");
-    process.exit(1);
-  }
 
   switch (argv.strategy) {
     case "pumpfun":

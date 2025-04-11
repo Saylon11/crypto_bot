@@ -107,3 +107,22 @@ export interface CommandLineArgs {
   test?: boolean;
   strategy?: "pumpfun" | "longterm";
 }
+
+export interface TokenReport {
+  tokenAddress: string;
+  riskAssessment: "low" | "medium" | "high";
+  scamReports: number;
+  riskScore: number;
+  verified: boolean;
+  details: {
+    liquidity: number;
+    volume: number;
+  };
+}
+
+export interface NewToken {
+  tokenAddress: string;
+  mint: string;
+  createdAt: string;
+  initialLiquidity: number;
+}
