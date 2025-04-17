@@ -126,3 +126,39 @@ export interface NewToken {
   createdAt: string;
   initialLiquidity: number;
 }
+
+export interface GmgnSwapRoute {
+  quote: QuoteResponse;
+  raw_tx: {
+    swapTransaction: string;
+    lastValidBlockHeight: number;
+    prioritizationFeeLamports: number;
+    recentBlockhash: string;
+    version: string;
+  };
+  amount_in_usd: string;
+  amount_out_usd: string;
+  jito_order_id: string | null;
+}
+
+// New types added for market sentiment and token analysis
+export interface MarketSentiment {
+  sentimentScore: number;
+  trendingTopics: string[];
+  recentTweets: string[];
+}
+
+export interface TokenAnalysis {
+  liquidityScore: number;
+  rugPullRisk: boolean;
+  riskReason?: string;
+}
+
+export interface AISentimentAnalysis {
+  overallScore: number;
+  redditScore: number;
+  telegramScore: number;
+  discordScore: number;
+  xComScore: number;
+  detailedAnalysis: string;
+}

@@ -10,7 +10,12 @@ import axios from "axios";
 import bs58 from "bs58";
 // import WebSocket from "ws";
 // import { executeSwapTransaction } from "./utils/transactionUtils.js";
-import type { LiquidityPool, TokenReport, NewToken } from "./types.js"; // Import custom types
+import type {
+  LiquidityPool,
+  TokenReport,
+  NewToken,
+  GmgnSwapRoute,
+} from "./types.js";
 
 dotenv.config();
 
@@ -19,11 +24,53 @@ export const METIS_JUPITER_API_URL = process.env.METIS_JUPITER_SWAP_API!;
 export const WALLET_SECRET_KEY = process.env.WALLET_SECRET_KEY!;
 export const RUGCHECK_API_URL = process.env.RUGCHECK_API_URL!;
 export const RUGCHECK_API_KEY = process.env.RUGCHECK_API_KEY!;
+export const GMGN_API_URL = process.env.GMGN_API_URL!;
 
 if (!QUICKNODE_RPC_URL || typeof QUICKNODE_RPC_URL !== "string") {
   throw new Error(
     "🚨 QUICKNODE_RPC_URL is missing or not a string in your .env file.",
   );
+}
+
+/**
+ * Fetches swap route from GMGN.ai API.
+ * @param tokenInAddress - The address of the input token.
+ * @param tokenOutAddress - The address of the output token.
+ * @param inAmount - The amount of the input token in lamports.
+ * @param fromAddress - The wallet address initiating the transaction.
+ * @param slippage - The slippage percentage.
+ * @returns The swap route data from GMGN.
+ */
+
+export async function getGmgnSwapRoute(
+  tokenInAddress: string,
+  tokenOutAddress: string,
+  inAmount: string,
+  fromAddress: string,
+  slippage: number,
+): Promise<GmgnSwapRoute> {
+  // Using top-level GMGN_API_URL constant
+
+  try {
+    const response = await axios.get(GMGN_API_URL, {
+      params: {
+        token_in_address: tokenInAddress,
+        token_out_address: tokenOutAddress,
+        in_amount: inAmount,
+        from_address: fromAddress,
+        slippage: slippage,
+      },
+    });
+
+    if (response.data.code !== 0) {
+      throw new Error(`GMGN API error: ${response.data.msg}`);
+    }
+
+    return response.data.data;
+  } catch (error) {
+    console.error("Error fetching GMGN swap route:", error);
+    throw error;
+  }
 }
 
 if (!WALLET_SECRET_KEY || typeof WALLET_SECRET_KEY !== "string") {

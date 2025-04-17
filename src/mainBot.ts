@@ -118,7 +118,8 @@ export async function executeTradeFlow(
       signature,
     );
 
-    const profitOrLoss = Math.random() * 10 - 5; // Simulated profit/loss
+    // Explicitly simulated profit/loss; replace with actual logic after integration.
+    const profitOrLoss = Math.random() * 10 - 5;
     logTradeDetails(
       { mint: outputMint, volume: amount, price: 0 },
       amount,
