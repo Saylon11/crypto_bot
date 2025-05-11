@@ -1,5 +1,5 @@
 import { Transaction } from "@solana/web3.js";
-import { connection, walletKeypair } from "../qnAPI.js"; // Updated to include .js extension
+import { connection, walletKeypair } from "../qnAPI"; // Updated to include .js extension
 import bs58 from "bs58";
 
 /**

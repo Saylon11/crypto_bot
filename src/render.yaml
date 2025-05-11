@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: hootbot-backend
+    env: node
+    runtime: node18 # Use Node 18 (or Node 20) environment
+    buildCommand: "npm install && npm run build" # Install deps and compile TypeScript
+    startCommand: "npm run start" # Start the compiled server
+    autoDeploy: true # Auto-deploy on new commits (GitHub integration)
+    envVars:
+      - key: API_KEY
+        value: "${API_KEY}" # Set your actual API key in Render's dashboard or as secret
+      - key: RPC_PROVIDER_URL
+        value: "${RPC_PROVIDER_URL}" # Example of another env var the bot might need (e.g. blockchain RPC)

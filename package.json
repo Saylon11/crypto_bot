@@ -1,10 +1,10 @@
 {
   "name": "crypto_bot",
   "version": "1.0.0",
-  "type": "module",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "start": "node --import ts-node/register/esm ./src/mainBot.ts",
+    "start": "ts-node src/server.ts",
     "dev": "ts-node ./src/mainBot.ts",
     "lint": "eslint 'src/**/*.ts' 'tests/**/*.ts'",
     "lint:fix": "eslint . --ext .ts --fix",
@@ -21,9 +21,9 @@
   "dependencies": {
     "@jup-ag/api": "^6.0.40",
     "@noble/curves": "^1.8.1",
-    "@quicknode/sdk": "^2.4.1",
-    "@solana/spl-token": "^0.4.13",
-    "@solana/web3.js": "^1.98.0",
+    "@quicknode/sdk": "^2.2.0",
+    "@solana/spl-token": "^0.3.5",
+    "@solana/web3.js": "^1.43.0",
     "assert": "^2.0.0",
     "axios": "^1.8.4",
     "bip39": "^3.0.4",
@@ -33,6 +33,9 @@
     "ed25519-hd-key": "^1.2.0",
     "ethers": "^5.4.6",
     "events": "^3.3.0",
+    "fastify": "^5.3.1",
+    "google-auth-library": "^9.15.1",
+    "googleapis": "^148.0.0",
     "tweetnacl": "^1.0.3",
     "ws": "^8.18.1",
     "yargs": "^17.7.2"
@@ -40,7 +43,7 @@
   "devDependencies": {
     "@tsconfig/node-lts": "^22.0.1",
     "@types/bs58": "^4.0.4",
-    "@types/node": "^22.13.14",
+    "@types/node": "^22.14.1",
     "@types/yargs": "^17.0.33",
     "@typescript-eslint/eslint-plugin": "^8.28.0",
     "@typescript-eslint/parser": "^8.28.0",

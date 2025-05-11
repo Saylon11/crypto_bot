@@ -37,3 +37,36 @@ export function decodePhantomKeypair(): Keypair {
     throw error;
   }
 }
+
+/**
+ * Decodes the burner wallet keypair from the environment variable `BURNER_SECRET_KEY`.
+ * @returns {Keypair} The burner Solana Keypair.
+ */
+export function decodeBurnerKeypair(): Keypair {
+  const secretKeyBase58 = process.env.BURNER_SECRET_KEY;
+
+  if (!secretKeyBase58) {
+    throw new Error("🚨 Environment variable BURNER_SECRET_KEY is missing.");
+  }
+
+  try {
+    const secretKeyUint8Array = bs58.decode(secretKeyBase58);
+
+    if (secretKeyUint8Array.length !== 64) {
+      throw new Error(
+        `🚨 Invalid burner secret key length: expected 64 bytes, got ${secretKeyUint8Array.length}.`,
+      );
+    }
+
+    const keypair = Keypair.fromSecretKey(secretKeyUint8Array);
+    console.log("🔥 Burner wallet keypair decoded successfully.");
+    return keypair;
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error("🚨 Error decoding Burner wallet keypair:", error.message);
+    } else {
+      console.error("🚨 Error decoding Burner wallet keypair:", error);
+    }
+    throw error;
+  }
+}

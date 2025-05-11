@@ -1,4 +1,4 @@
-import typescriptParser from "@typescript-eslint/parser";
+const typescriptParser = require("@typescript-eslint/parser");
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
 import prettier from "eslint-plugin-prettier";
 import eslintConfigPrettier from "eslint-config-prettier";

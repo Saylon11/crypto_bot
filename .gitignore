@@ -3,3 +3,5 @@ node_modules/
 dist/
 expo-solana-wallet/
 
+# Google Cloud service account key
+keys/gcp-service-account.json

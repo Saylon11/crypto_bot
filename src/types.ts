@@ -1,3 +1,5 @@
+// ==================== LEGACY TYPES (Trading, Token Analysis) ====================
+
 export interface Quote {
   amm: string;
   inputMint: string;
@@ -51,20 +53,6 @@ export interface QuoteResponse {
   timeTaken: number;
 }
 
-export interface LiquidityPool {
-  poolId: string;
-  tokenAddress: string;
-  liquidity: number;
-}
-
-export interface PumpFunQuote {
-  mint: string;
-  type: "BUY" | "SELL";
-  amount: number;
-  slippageBps: number;
-  priceImpactPct?: number;
-  estimatedAmount?: number;
-}
 
 export interface Config {
   inputMint: string;
@@ -127,21 +115,8 @@ export interface NewToken {
   initialLiquidity: number;
 }
 
-export interface GmgnSwapRoute {
-  quote: QuoteResponse;
-  raw_tx: {
-    swapTransaction: string;
-    lastValidBlockHeight: number;
-    prioritizationFeeLamports: number;
-    recentBlockhash: string;
-    version: string;
-  };
-  amount_in_usd: string;
-  amount_out_usd: string;
-  jito_order_id: string | null;
-}
 
-// New types added for market sentiment and token analysis
+// --- Optional Future AI Extensions: Sentiment Analysis, Token Risk Analysis ---
 export interface MarketSentiment {
   sentimentScore: number;
   trendingTopics: string[];
@@ -161,4 +136,103 @@ export interface AISentimentAnalysis {
   discordScore: number;
   xComScore: number;
   detailedAnalysis: string;
+}
+// Strategy Evaluation Utilities
+export interface TokenEvaluation {
+  meetsLiquidityThreshold: boolean;
+  exceedsVolumeThreshold: boolean;
+  hasAcceptablePriceMovement: boolean;
+  isFreshToken?: boolean;
+}
+
+
+// ==================== MIND 1.0 TYPES (Behavioral Intelligence) ====================
+
+export interface WalletData {
+  walletAddress: string;
+  address: string;          // Wallet address (for burn matching and labeling)
+  isBurner?: boolean;       // Flag if wallet is a known burn wallet
+  note?: string;            // Optional human-readable note (e.g. reason or tag)
+  tokenAddress: string;
+  amount: number;
+  timestamp: number;
+  priceChangePercent?: number; // % change in price since entry
+  totalBalance?: number;       // estimated token balance before sell
+}
+
+export interface DevWallet {
+  address: string;
+  initialBalance: number;
+}
+
+export interface DevExhaustionResult {
+  exhausted: boolean;
+  remainingPercentage: number;
+}
+export interface HerdSentimentReport {
+  netSentiment(survivabilityScore: number, panicScore: number, remainingPercentage: number, inflowStrength: number, netSentiment: any): unknown;
+  smallWalletBuyCount: number;
+  averageBuyAmount: number;
+  volatility: number;
+  activeHours: string[];
+}
+export interface WalletProfileReport {
+  shrimps: any;
+  dolphins: any;
+  whales: any;
+  shrimpPercent: number;
+  dolphinPercent: number;
+  whalePercent: number;
+}
+export interface DevWalletData {
+  walletAddress: string;
+  holdingPercent: number; // Percent of total token supply
+  recentMovementPercent: number; // % of their holdings moved recently
+}
+
+export interface DevWalletRiskReport {
+  devRiskLevel: number; // 0–100 risk % based on how many wallets look suspicious
+  riskyWalletCount: number;
+  totalDevWallets: number;
+}
+export interface MINDInputs {
+  herdReport: HerdSentimentReport;
+  walletReport: WalletProfileReport;
+  devReport: DevWalletRiskReport;
+  marketFlow: MarketFlowReport;
+  liquidityCycles: LiquidityHotZones;
+  regionalLiquidity: RegionalLiquidityReport;
+  consumerProfile: ConsumerProfile;
+}
+export interface MarketFlowReport {
+  inflowStrength: number; // 0-100 scale of liquidity entering
+}
+
+export interface LiquidityHotZones {
+  hourlyActivity: { [hour: string]: number };
+}
+
+export interface RegionalLiquidityReport {
+  regionActivity: { [region: string]: number };
+}
+
+export interface TradeDirective {
+  action: "BUY" | "SELL" | "HOLD" | "EXIT";
+  percentage: number;
+  reason: string;
+}
+
+export interface ConsumerProfile {
+  shrimpPercent: number;
+  dolphinPercent: number;
+  whalePercent: number;
+}
+
+export interface MINDReport {
+  survivabilityScore: number;
+  consumerProfile: ConsumerProfile;
+  emotionalHeatmap: string[];
+  regionalFlow: RegionalLiquidityReport;
+  marketFlowStrength: number;
+  tradeSuggestion: TradeDirective;
 }

@@ -8,87 +8,21 @@ import {
 } from "@solana/web3.js";
 import axios from "axios";
 import bs58 from "bs58";
-// import WebSocket from "ws";
-// import { executeSwapTransaction } from "./utils/transactionUtils.js";
-import type {
-  LiquidityPool,
-  TokenReport,
-  NewToken,
-  GmgnSwapRoute,
-} from "./types.js";
+import type { TokenReport, NewToken } from "./types";
 
 dotenv.config();
 
-export const QUICKNODE_RPC_URL = process.env.QUICKNODE_RPC_ENDPOINT!;
-export const METIS_JUPITER_API_URL = process.env.METIS_JUPITER_SWAP_API!;
+export const QUICKNODE_RPC_URL = process.env.QUICKNODE_RPC_URL!;
+export const METIS_JUPITER_SWAP_API = process.env.METIS_JUPITER_SWAP_API!;
 export const WALLET_SECRET_KEY = process.env.WALLET_SECRET_KEY!;
 export const RUGCHECK_API_URL = process.env.RUGCHECK_API_URL!;
 export const RUGCHECK_API_KEY = process.env.RUGCHECK_API_KEY!;
-export const GMGN_API_URL = process.env.GMGN_API_URL!;
+// export const QUICKNODE_WEBSOCKET_URL = process.env.QUICKNODE_WEBSOCKET_URL!; // Commented out for later use
 
-if (!QUICKNODE_RPC_URL || typeof QUICKNODE_RPC_URL !== "string") {
-  throw new Error(
-    "🚨 QUICKNODE_RPC_URL is missing or not a string in your .env file.",
-  );
-}
-
-/**
- * Fetches swap route from GMGN.ai API.
- * @param tokenInAddress - The address of the input token.
- * @param tokenOutAddress - The address of the output token.
- * @param inAmount - The amount of the input token in lamports.
- * @param fromAddress - The wallet address initiating the transaction.
- * @param slippage - The slippage percentage.
- * @returns The swap route data from GMGN.
- */
-
-export async function getGmgnSwapRoute(
-  tokenInAddress: string,
-  tokenOutAddress: string,
-  inAmount: string,
-  fromAddress: string,
-  slippage: number,
-): Promise<GmgnSwapRoute> {
-  // Using top-level GMGN_API_URL constant
-
-  try {
-    const response = await axios.get(GMGN_API_URL, {
-      params: {
-        token_in_address: tokenInAddress,
-        token_out_address: tokenOutAddress,
-        in_amount: inAmount,
-        from_address: fromAddress,
-        slippage: slippage,
-      },
-    });
-
-    if (response.data.code !== 0) {
-      throw new Error(`GMGN API error: ${response.data.msg}`);
-    }
-
-    return response.data.data;
-  } catch (error) {
-    console.error("Error fetching GMGN swap route:", error);
-    throw error;
-  }
-}
-
-if (!WALLET_SECRET_KEY || typeof WALLET_SECRET_KEY !== "string") {
-  throw new Error(
-    "🚨 WALLET_SECRET is missing or not a string in your .env file.",
-  );
-}
-
-export const QUICKNODE_WS_URL = process.env.QUICKNODE_WEBSOCKET_URL!;
 export const connection = new Connection(QUICKNODE_RPC_URL, "confirmed");
 
 export function loadWalletKeypair(): Keypair {
   try {
-    // 🚨 SECURITY WARNING:
-    // Do NOT log or expose WALLET_SECRET_KEY in production environments.
-    // Use a secure key management service or encrypt environment variables
-    // to protect sensitive information.
-
     if (!WALLET_SECRET_KEY) {
       throw new Error("🚨 WALLET_SECRET_KEY is not defined in .env file.");
     }
@@ -109,9 +43,9 @@ export const walletKeypair = loadWalletKeypair();
 
 console.log("✅ Loaded Environment Variables from qnAPI.ts:", {
   QUICKNODE_RPC_URL,
-  METIS_JUPITER_API_URL,
-  QUICKNODE_WS_URL,
+  METIS_JUPITER_SWAP_API,
   WALLET_PUBLIC_KEY: walletKeypair.publicKey.toBase58(),
+  // QUICKNODE_WEBSOCKET_URL, // Commented out for later use
 });
 
 const apiCache = new Map<string, { data: unknown; timestamp: number }>();
@@ -174,108 +108,6 @@ async function getCurrentBlockHeight(): Promise<number> {
       console.error("🚨 Block Height API Error:", error);
     }
     throw error;
-  }
-}
-
-// Removed Jupiter-specific function
-// export async function getJupiterQuote(
-//   inputMint: string,
-//   outputMint: string,
-//   amount: number,
-// ): Promise<any> {
-//   const cacheKey = `quote-${inputMint}-${outputMint}-${amount}`;
-//   const cached = getCachedResponse(cacheKey);
-//   if (cached) return cached;
-
-//   try {
-//     const baseUrl = METIS_JUPITER_API_URL.replace(/\/+$/, "");
-//     const response = await axios.get(`${baseUrl}/quote`, {
-//       params: { inputMint, outputMint, amount, slippageBps: 50 },
-//     });
-//     setCachedResponse(cacheKey, response.data);
-//     return response.data;
-//   } catch (error: unknown) {
-//     if (axios.isAxiosError(error)) {
-//       console.error(
-//         "🚨 Axios error fetching Jupiter quote:",
-//         error.response?.data || error.message,
-//       );
-//     } else if (error instanceof Error) {
-//       console.error("🚨 General error fetching Jupiter quote:", error.message);
-//     } else {
-//       console.error("🚨 Unknown error fetching Jupiter quote:", error);
-//     }
-//     return null;
-//   }
-// }
-
-// Removed Jito bundle logic
-// export async function sendJitoBundle(
-//   transactions: Transaction[],
-//   simulate = false,
-// ): Promise<JitoBundleResponse> {
-//   const method = simulate ? "simulateBundle" : "sendBundle";
-//   const serializedTxns = transactions.map((tx) => bs58.encode(tx.serialize()));
-
-//   const payload = {
-//     jsonrpc: "2.0",
-//     id: `jito-${Date.now()}`,
-//     method,
-//     params: simulate ? [serializedTxns] : { transactions: serializedTxns },
-//   };
-
-//   try {
-//     const response = await axios.post(QUICKNODE_RPC_URL, payload, {
-//       headers: { "Content-Type": "application/json" },
-//     });
-
-//     if (response.data?.error) {
-//       console.error(`❌ Jito ${method} Error:`, response.data.error);
-//       return { bundleId: "", status: "error" };
-//     }
-
-//     console.log(`✅ Jito ${method} successful:`, response.data.result);
-//     return { bundleId: response.data.result, status: "success" };
-//   } catch (error) {
-//     console.error(`🚨 Jito ${method} Error:`, error);
-//     return { bundleId: "", status: "error" };
-//   }
-// }
-
-export async function getLiquidityPools(): Promise<LiquidityPool[]> {
-  const cacheKey = "allLiquidityPools";
-  const cachedData = getCachedResponse<LiquidityPool[]>(cacheKey);
-  if (cachedData) {
-    console.log("✅ Using cached liquidity pools data");
-    return cachedData;
-  }
-
-  await getCurrentBlockHeight(); // Ensure cache invalidation logic is applied
-
-  try {
-    console.log("📡 Fetching liquidity pools from QuickNode...");
-    const response = await axios.post(QUICKNODE_RPC_URL, {
-      jsonrpc: "2.0",
-      id: 1,
-      method: "qn_getTokenLiquidityPools",
-      params: {}, // Add any required parameters here
-    });
-
-    if (!response.data || !response.data.result) {
-      console.error("🚨 Malformed liquidity pools response", response.data);
-      return [];
-    }
-
-    setCachedResponse(cacheKey, response.data.result);
-    console.log("✅ Liquidity pools fetched successfully.");
-    return response.data.result as LiquidityPool[];
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      console.error("🚨 Liquidity Pool API Error:", error.message, error.stack);
-    } else {
-      console.error("🚨 Liquidity Pool API Error:", error);
-    }
-    return [];
   }
 }
 
