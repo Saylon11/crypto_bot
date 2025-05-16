@@ -81,6 +81,8 @@ fastify.get("/status", async (request: FastifyRequest, reply: FastifyReply) => {
   return reply.send(status);
 });
 
+// Register TelePostBot routes
+fastify.register(import('./telegram/PC3_PostBot'));
 // Start the Fastify server
 const start = async () => {
   try {

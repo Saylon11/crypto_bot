@@ -236,3 +236,8 @@ export interface MINDReport {
   marketFlowStrength: number;
   tradeSuggestion: TradeDirective;
 }
+export interface TelePostPayload {
+  file_url: string;
+  caption: string;
+  channel_id: string;
+}
