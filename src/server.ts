@@ -2,6 +2,9 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import Fastify, { FastifyRequest, FastifyReply } from "fastify";
+import autoload from '@fastify/autoload';
+import { join } from 'path';
+import path from 'path';
 // import { QUICKNODE_WEBSOCKET_URL } from "./qnAPI"; // Commented out for later use
 
 // Load environment variables (you can use dotenv in development)
@@ -82,7 +85,13 @@ fastify.get("/status", async (request: FastifyRequest, reply: FastifyReply) => {
 });
 
 // Register TelePostBot routes
-fastify.register(import('./telegram/PC3_PostBot'));
+// fastify.register(import('./telegram/PC3_PostBot')); // Temporarily disabled by design
+fastify.register(import('./x/postMeme'));
+// Auto-load all routes from the /routes directory
+fastify.register(autoload, {
+  dir: path.resolve(__dirname, 'routes'),
+  options: { prefix: '/' }
+});
 // Start the Fastify server
 const start = async () => {
   try {

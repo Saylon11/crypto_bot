@@ -149,6 +149,7 @@ export interface TokenEvaluation {
 // ==================== MIND 1.0 TYPES (Behavioral Intelligence) ====================
 
 export interface WalletData {
+  type: string;
   walletAddress: string;
   address: string;          // Wallet address (for burn matching and labeling)
   isBurner?: boolean;       // Flag if wallet is a known burn wallet
@@ -170,7 +171,7 @@ export interface DevExhaustionResult {
   remainingPercentage: number;
 }
 export interface HerdSentimentReport {
-  netSentiment(survivabilityScore: number, panicScore: number, remainingPercentage: number, inflowStrength: number, netSentiment: any): unknown;
+  netSentiment: number;
   smallWalletBuyCount: number;
   averageBuyAmount: number;
   volatility: number;

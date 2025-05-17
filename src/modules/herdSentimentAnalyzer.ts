@@ -1,6 +1,6 @@
 // src/modules/herdSentimentAnalyzer.ts
 
-import { WalletData, HerdSentimentReport } from "../types"; // Adjusted path to match the correct location
+import { WalletData } from "../types"; // Adjusted path to match the correct location
 import { calculateAverage, calculateStandardDeviation } from "../utils/mathUtils";
 import { getUTCHourFromTimestamp } from "../utils/timeUtils";
 
