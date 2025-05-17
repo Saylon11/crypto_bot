@@ -1,3 +1,5 @@
+// src/devTools/burn.ts
+
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -14,7 +16,7 @@ import {
   getAccount,
 } from "@solana/spl-token";
 
-import { decodeBurnerKeypair } from "../src/utils/phantomUtils";
+import { decodeBurnerKeypair } from "../utils/phantomUtils";
 import { burnWallets } from "./burnRegistry";
 
 // ✅ Verified OILC Mint + Token Account Address
@@ -47,6 +49,7 @@ async function run() {
     burner.publicKey,
     amount
   );
+
   await connection.confirmTransaction(signature, "confirmed");
   console.log("✅ Burn successful! TX Signature:", signature);
 }

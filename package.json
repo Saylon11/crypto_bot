@@ -23,7 +23,7 @@
     "@jup-ag/api": "^6.0.40",
     "@noble/curves": "^1.8.1",
     "@quicknode/sdk": "^2.2.0",
-    "@solana/spl-token": "^0.1.8",
+    "@solana/spl-token": "^0.4.13",
     "@solana/web3.js": "^1.43.0",
     "assert": "^2.0.0",
     "axios": "^1.9.0",

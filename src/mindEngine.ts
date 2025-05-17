@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import { fetchBehaviorFromHelius } from "./utils/apiClient";
-import { burnWallets } from "../devTools/burnRegistry";
+import { burnWallets } from "./devTools/burnRegistry";
 import { analyzeHerdSentiment } from "./modules/herdSentimentAnalyzer";
 import { profileWallets } from "./modules/walletProfiler";
 import { trackDevWallets } from "./modules/devWalletTracker";
@@ -93,13 +93,15 @@ export async function runMindEngine(): Promise<MINDReport> {
   console.log("🔥 Booting HootBot MIND 1.0...");
 
   const walletData: WalletData[] = await fetchBehaviorFromHelius(process.env.HELIUS_TARGET_WALLET || "");
+
   // Tag any wallet that matches a known burner address
   walletData.forEach(wallet => {
-    if (burnWallets.includes(wallet.address)) {
+    if (burnWallets.some(b => b.address === wallet.address)) {
       wallet.isBurner = true;
       wallet.note = "This wallet is registered as a known burn address (irreversible).";
     }
   });
+
   console.log("📡 Helius behavioral liquidity snapshot:", walletData);
 
   if (!walletData.length) {

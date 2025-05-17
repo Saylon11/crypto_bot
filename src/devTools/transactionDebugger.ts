@@ -1,10 +1,13 @@
-import { devWallets } from "../src/data/devWalletList";
+// src/devTools/transactionDebugger.ts
+
+import { devWallets } from "../data/devWalletList";
 import dotenv from "dotenv";
 dotenv.config();
 
 import axios from "axios";
-import { url } from "inspector";
-import { detectPanicSelling } from "../src/modules/panicSellDetector";
+import { detectPanicSelling } from "../modules/panicSellDetector";
+import { number, string } from "yargs";
+import { WalletData } from "../types";
 
 const HELIUS_API_KEY = process.env.HELIUS_API_KEY as string;
 const TOKEN_ADDRESS = process.env.TEST_TOKEN_ADDRESS as string;
@@ -19,19 +22,17 @@ async function fetchAndDebugTransactions() {
   const walletAddress = "Bms1gxfUxts2DUwooxd6hTq3tANPh8KBadgJpPNEaLyP"; // Hoot Wallet
   const url = `https://api.helius.xyz/v0/addresses/${walletAddress}/transactions?api-key=${HELIUS_API_KEY}`;
   
+  let walletTransfers: any[] = [];
+
   try {
     const response = await axios.get(url);
     const transactions = response.data || [];
 
-    // Future: Look into postTokenBalances and accountData[].tokenBalanceChanges for swap tracking
-
     console.log(`🧾 Total transactions pulled: ${transactions.length}`);
 
-    const walletTransfers = transactions.flatMap((tx: any, index: number) => {
+    walletTransfers = transactions.flatMap((tx: any, index: number) => {
       const transfers = tx?.events?.tokenTransfers || [];
 
-      // Fallback: check parsedInstructions and instructions if tokenTransfers is empty.
-      // Extended fallback for Jupiter/Raydium: extract transfer info from raw SPL Token instructions.
       const fallbackTransfers =
         transfers.length > 0
           ? []
@@ -111,17 +112,26 @@ async function fetchAndDebugTransactions() {
       console.log(`Token Mint: ${tx.mint}`);
     });
 
-    type WalletData = {
-      walletAddress: string;
+    // Define WalletData type inline since '../types' module is missing
+        type WalletData = {
+          type: string;
+          address: string;
+          walletAddress: string; // Add the missing property
+          tokenAddress: string;
+          amount: number;
+          timestamp: number;
+          priceChangePercent: number;
+          totalBalance: number;
+        };
       tokenAddress: string;
       amount: number;
       timestamp: number;
       priceChangePercent: number;
       totalBalance: number;
-    };
-
     const walletDataLike: WalletData[] = walletTransfers.map((t: any) => ({
-      walletAddress: t.from,
+      type: "trade",
+      address: t.from,
+      walletAddress: t.from, // Ensure walletAddress is included
       tokenAddress: t.mint,
       amount: parseFloat(t.amount),
       timestamp: t.timestamp,
