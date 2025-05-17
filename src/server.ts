@@ -87,6 +87,8 @@ fastify.get("/status", async (request: FastifyRequest, reply: FastifyReply) => {
 // Register TelePostBot routes
 // fastify.register(import('./telegram/PC3_PostBot')); // Temporarily disabled by design
 fastify.register(import('./x/postMeme'));
+// Manually register TelePostBot route to ensure it loads in production
+fastify.register(import('./routes/telepostbot/sendMeme'));
 // Auto-load all routes from the /routes directory
 fastify.register(autoload, {
   dir: path.resolve(__dirname, 'routes'),
