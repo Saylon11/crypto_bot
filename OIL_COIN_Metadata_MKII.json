@@ -1,0 +1,56 @@
+{
+  "name": "Oil Coin",
+  "symbol": "OILCOIN",
+  "description": "The official utility token of Project C\u00b3 \u2013 Crystal Clear Commodities\u2122. $OILCOIN enables trustless, real-time ownership, settlement, and transfer of physical crude oil on Solana. Vault-wrapped and metadata-verified by the Project C\u00b3 Registry.",
+  "image": "https://gateway.pinata.cloud/ipfs/bafybeieqqa7vqdpgjdfpztxbrxmnp5ve4lo4s6ek655siijwn36i3hszsy",
+  "external_url": "https://projectc3.xyz/oilcoin",
+  "attributes": [
+    {
+      "trait_type": "Commodity",
+      "value": "Oil"
+    },
+    {
+      "trait_type": "Utility",
+      "value": "C\u00b3 Smart Vault"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "MKII"
+    }
+  ],
+  "collection": {
+    "name": "C\u00b3 Vault Series",
+    "family": "Crystal Clear Commodities"
+  },
+  "provenance_hash": "d208d6cd0b6011c726d2d30584ea6873e9e31aa1bbc1d5a4e9ef859e34173c56",
+  "vault_signature": "C3-VAULT-OILC-MKII",
+  "c3_verified": true,
+  "badge": "\ud83d\udee2\ufe0f C\u00b3 Utility Vault",
+  "properties": {
+    "files": [
+      {
+        "uri": "https://gateway.pinata.cloud/ipfs/bafybeieqqa7vqdpgjdfpztxbrxmnp5ve4lo4s6ek655siijwn36i3hszsy",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "BeuXNjvA1Tpg1vAg4Zge1ekg3mfEt1ARohPCXahDR6UU",
+        "share": 100
+      }
+    ]
+  },
+  "burn_ledger": {
+    "total_burned": "37300000",
+    "burn_events": 3,
+    "last_burn_date": "2025-06-18",
+    "burn_wallets": [
+      "Wallet1Pubkey",
+      "Wallet2Pubkey",
+      "Wallet3Pubkey"
+    ]
+  },
+  "vault_status": "finalized",
+  "mint_freeze": true
+}

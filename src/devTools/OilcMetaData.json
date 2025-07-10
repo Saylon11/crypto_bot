@@ -1,0 +1,27 @@
+{
+  "name": "OilCoin",
+  "symbol": "OILC",
+  "description": "The commodity-backed meme that started a revolution. #ProjectC3",
+  "image": "https://gateway.pinata.cloud/ipfs/bafybeieqqa7vqdpgjdfpztxbrxmnp5ve4lo4s6ek655siijwn36i3hszsy",
+  "external_url": "https://www.projectc3.xyz/oilcoin",
+  "seller_fee_basis_points": 0,
+  "attributes": [],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://gateway.pinata.cloud/ipfs/bafybeieqqa7vqdpgjdfpztxbrxmnp5ve4lo4s6ek655siijwn36i3hszsy",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "Bms1gxfUxts2DUwooxd6hTq3tANPh8KBadgJpPNEaLyP",
+        "share": 100
+      }
+    ]
+  },
+  "original_mint": "Cwn9d1E636CPBTgtPXZAuqn6TgUh6mPpUMBr3w7kpump",
+  "c3_verified": true,
+  "vault_signature": "51b22ad64295cd5988974e42b84982f5b048ae38dcff1a151fd7488d957d4160"
+}

@@ -1,36 +1,9 @@
-/**
- * Estimate wallet concentration depth from Helius transfers
- */
-function analyzeWalletConcentration(transfers: any[]): number {
-  const walletSums: Record<string, number> = {};
-
-  for (const tx of transfers) {
-    const to = tx.toUserAccount || "unknown";
-    const amount = parseFloat(tx.amount || "0");
-
-    if (!walletSums[to]) {
-      walletSums[to] = 0;
-    }
-
-    walletSums[to] += amount;
-  }
-
-  const sortedHolders = Object.values(walletSums).sort((a, b) => b - a);
-  const totalHeld = sortedHolders.reduce((a, b) => a + b, 0);
-  const top5 = sortedHolders.slice(0, 5).reduce((a, b) => a + b, 0);
-  const top10 = sortedHolders.slice(0, 10).reduce((a, b) => a + b, 0);
-  const top20 = sortedHolders.slice(0, 20).reduce((a, b) => a + b, 0);
-
-  const concentration5 = (top5 / totalHeld) * 100;
-  const concentration10 = (top10 / totalHeld) * 100;
-  const concentration20 = (top20 / totalHeld) * 100;
-
-  if (concentration5 > 80) return 5;
-  if (concentration10 > 40) return 10;
-  return 20;
-}
 import axios from "axios";
 import { WalletData } from "../types";
+import {
+  analyzeWalletConcentration,
+  TransferConcentrationInput,
+} from "../modules/walletConcentration"; // Corrected path
 
 const HELIUS_API_KEY = process.env.HELIUS_API_KEY as string;
 const TOKEN_ADDRESS = process.env.TEST_TOKEN_ADDRESS as string;
@@ -52,7 +25,8 @@ export async function fetchBehaviorFromHelius(walletAddress: string): Promise<Wa
     const transactions = response.data || [];
     console.log(`📊 Fetched ${transactions.length} raw transactions from Helius`);
 
-    const walletTransfers = transactions.flatMap((tx: any, index: number) => {
+    // Define the type for elements in walletTransfers for clarity
+    const walletTransfers: TransferConcentrationInput[] = transactions.flatMap((tx: any) => { // Removed index as it's not used
       const transfers = tx?.events?.tokenTransfers || [];
 
       const fallbackTransfers =
@@ -112,9 +86,9 @@ export async function fetchBehaviorFromHelius(walletAddress: string): Promise<Wa
           from: t.fromUserAccount || t.source || t.accountKeys?.[0] || "unknown",
           to: t.toUserAccount || t.destination || t.accountKeys?.[1] || "unknown",
           amount: parseFloat(t.amount || t.parsed?.info?.amount || "0"),
-          mint: TOKEN_ADDRESS,
-          priceChangePercent: 0,
-          totalBalance: 1000
+          mint: TOKEN_ADDRESS, // Assuming TOKEN_ADDRESS is the relevant mint for this analysis
+          priceChangePercent: 0, // Placeholder
+          totalBalance: 1000 // Placeholder
         };
       }).filter(Boolean);
     });
@@ -127,13 +101,14 @@ export async function fetchBehaviorFromHelius(walletAddress: string): Promise<Wa
     const walletData: WalletData[] = walletTransfers.map((t: any) => ({
       walletAddress: t.from,
       tokenAddress: t.mint,
-      amount: parseFloat(t.amount),
+      amount: t.amount, // t.amount is already a number from walletTransfers mapping
       timestamp: t.timestamp,
       priceChangePercent: t.priceChangePercent,
       totalBalance: t.totalBalance,
     }));
 
-    const walletDepthTarget = analyzeWalletConcentration(walletData);
+    // Call analyzeWalletConcentration with walletTransfers, which contains 'toUserAccount' and 'amount' fields
+    const walletDepthTarget = analyzeWalletConcentration(walletTransfers);
     console.log(`🧠 Wallet Concentration Target: Top ${walletDepthTarget} wallets`);
     console.log(`✅ Parsed ${walletData.length} behavioral events from Helius.`);
     return walletData;
