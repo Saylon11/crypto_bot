@@ -3,3 +3,8 @@ export declare const burnWallets: {
     amount: number;
     date?: string;
 }[];
+export declare const burnedVaultNFTs: {
+    mint: string;
+    burnedAt: string;
+    reason?: string;
+}[];

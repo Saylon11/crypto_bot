@@ -1,14 +1,6 @@
-import { WalletData } from "../types";
+// src/modules/devExhaustionDetector.ts
 
-interface DevWallet {
-  address: string;
-  initialBalance: number;
-}
-
-interface DevExhaustionResult {
-  exhausted: boolean;
-  remainingPercentage: number;
-}
+import { WalletData, DevWallet, DevExhaustionResult } from "../types";
 
 export function detectDevExhaustion(
   devWallets: DevWallet[],

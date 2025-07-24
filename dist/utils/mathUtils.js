@@ -12,20 +12,19 @@ exports.findMin = findMin;
 function calculateAverage(numbers) {
     if (numbers.length === 0)
         return 0;
-    const sum = numbers.reduce((acc, num) => acc + num, 0);
+    var sum = numbers.reduce(function (acc, num) { return acc + num; }, 0);
     return sum / numbers.length;
 }
 function calculateStandardDeviation(numbers) {
     if (numbers.length === 0)
         return 0;
-    const avg = calculateAverage(numbers);
-    const variance = calculateAverage(numbers.map(num => Math.pow(num - avg, 2)));
+    var avg = calculateAverage(numbers);
+    var variance = calculateAverage(numbers.map(function (num) { return Math.pow(num - avg, 2); }));
     return Math.sqrt(variance);
 }
 function findMax(numbers) {
-    return numbers.length ? Math.max(...numbers) : 0;
+    return numbers.length ? Math.max.apply(Math, numbers) : 0;
 }
 function findMin(numbers) {
-    return numbers.length ? Math.min(...numbers) : 0;
+    return numbers.length ? Math.min.apply(Math, numbers) : 0;
 }
-//# sourceMappingURL=mathUtils.js.map

@@ -12,11 +12,10 @@ function convertTimestampToUTCDate(timestamp) {
     return new Date(timestamp * 1000); // Assuming incoming timestamp is in seconds
 }
 function getUTCHourFromTimestamp(timestamp) {
-    const date = convertTimestampToUTCDate(timestamp);
+    var date = convertTimestampToUTCDate(timestamp);
     return date.getUTCHours();
 }
 function bucketTimestampByHour(timestamp) {
-    const hour = getUTCHourFromTimestamp(timestamp);
-    return `${hour}:00 - ${hour + 1}:00 UTC`;
+    var hour = getUTCHourFromTimestamp(timestamp);
+    return "".concat(hour, ":00 - ").concat(hour + 1, ":00 UTC");
 }
-//# sourceMappingURL=timeUtils.js.map

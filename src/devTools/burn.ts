@@ -7,53 +7,66 @@ import {
   Connection,
   PublicKey,
   sendAndConfirmTransaction,
-  Transaction,
 } from "@solana/web3.js";
 
 import {
   TOKEN_PROGRAM_ID,
   burn,
-  getAccount,
 } from "@solana/spl-token";
 
 import { decodeBurnerKeypair } from "../utils/phantomUtils";
-import { burnWallets } from "./burnRegistry";
 
-// ✅ Verified OILC Mint + Token Account Address
-const TOKEN_MINT = new PublicKey("Cwn9d1E636CPBTgtPXZAuqn6TgUh6mPpUMBr3w7kpump");
-const BURN_ADDRESS = new PublicKey("11111111111111111111111111111111");
-const sourceTokenAccount = new PublicKey("GGziYaNVaqYJqkJME1fWRLreD7ToANRLoQ37cX9UbsZp");
 const connection = new Connection("https://api.mainnet-beta.solana.com", "confirmed");
 
 async function run() {
   const burner = decodeBurnerKeypair();
-  const accountInfo = await getAccount(connection, sourceTokenAccount);
-  const amount = accountInfo.amount;
-    
-  console.log(`🔥 Burning ${amount} $OILC from wallet: ${burner.publicKey.toBase58()}`);
+  const burnerPubkey = burner.publicKey;
 
-  // Validate the token account before proceeding
-  try {
-    const tokenAccountInfo = await getAccount(connection, sourceTokenAccount);
-    console.log("✅ Token account is valid SPL structure:", tokenAccountInfo);
-  } catch (e) {
-    console.error("❌ Invalid SPL token account. Cannot proceed with burn:", e);
+  console.log(`🧨 Scanning wallet: ${burnerPubkey.toBase58()} for SPL tokens...`);
+
+  // Use native Web3.js method to fetch parsed SPL token accounts
+  const tokenAccounts = await connection.getParsedTokenAccountsByOwner(
+    burnerPubkey,
+    { programId: TOKEN_PROGRAM_ID }
+  );
+
+  const splAccounts = tokenAccounts.value.filter((acc) => {
+    const amount = acc.account.data.parsed.info.tokenAmount.uiAmount;
+    return amount && amount > 0;
+  });
+
+  if (splAccounts.length === 0) {
+    console.log("✅ No SPL tokens to burn. Wallet is clean.");
     return;
   }
 
-  const signature = await burn(
-    connection,
-    burner, // payer
-    sourceTokenAccount,
-    TOKEN_MINT,
-    burner.publicKey,
-    amount
-  );
+  for (const acc of splAccounts) {
+    const tokenAccountPubkey = acc.pubkey;
+    const mint = new PublicKey(acc.account.data.parsed.info.mint);
+    const rawAmount = acc.account.data.parsed.info.tokenAmount.amount;
 
-  await connection.confirmTransaction(signature, "confirmed");
-  console.log("✅ Burn successful! TX Signature:", signature);
+    console.log(`🔥 Burning ${rawAmount} of token: ${mint.toBase58()}`);
+
+    try {
+      const sig = await burn(
+        connection,
+        burner,
+        tokenAccountPubkey,
+        mint,
+        burnerPubkey,
+        BigInt(rawAmount)
+      );
+
+      await connection.confirmTransaction(sig, "confirmed");
+      console.log(`✅ Burned successfully. TX: https://solscan.io/tx/${sig}`);
+    } catch (err) {
+      console.error(`❌ Burn failed for token ${mint.toBase58()}:`, err);
+    }
+  }
+
+  console.log("🏁 All SPL token burns complete.");
 }
 
 run().catch((err) => {
-  console.error("🚨 Burn failed:", err);
+  console.error("🚨 Unhandled error during burn process:", err);
 });

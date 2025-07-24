@@ -8,19 +8,18 @@ exports.analyzeMarketFlow = analyzeMarketFlow;
  */
 function analyzeMarketFlow(globalLiquidityData) {
     console.log("Analyzing market flow...");
-    const recentLiquidity = globalLiquidityData.slice(-10); // Take last 10 datapoints
-    const previousLiquidity = globalLiquidityData.slice(-20, -10); // Take datapoints before that
-    const recentAverage = recentLiquidity.length
-        ? recentLiquidity.reduce((acc, val) => acc + val, 0) / recentLiquidity.length
+    var recentLiquidity = globalLiquidityData.slice(-10); // Take last 10 datapoints
+    var previousLiquidity = globalLiquidityData.slice(-20, -10); // Take datapoints before that
+    var recentAverage = recentLiquidity.length
+        ? recentLiquidity.reduce(function (acc, val) { return acc + val; }, 0) / recentLiquidity.length
         : 0;
-    const previousAverage = previousLiquidity.length
-        ? previousLiquidity.reduce((acc, val) => acc + val, 0) / previousLiquidity.length
+    var previousAverage = previousLiquidity.length
+        ? previousLiquidity.reduce(function (acc, val) { return acc + val; }, 0) / previousLiquidity.length
         : 0;
-    const inflowStrength = previousAverage === 0
+    var inflowStrength = previousAverage === 0
         ? 50
         : Math.min(Math.max(50 + ((recentAverage - previousAverage) / previousAverage) * 50, 0), 100);
     return {
-        inflowStrength,
+        inflowStrength: inflowStrength,
     };
 }
-//# sourceMappingURL=marketFlowAnalyzer.js.map

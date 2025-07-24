@@ -1,0 +1,10 @@
+{
+    "asset": "OILCOIN",
+    "mint": "Cwn9d1E636CPBTgtPXZAuqn6TgUh6mPpUMBr3w7kpump",
+    "registry": "https://raw.githubusercontent.com/Saylon11/oilc-metadata/main/public/metadata/oilc.json",
+    "verified_against": "OIL_COIN_Metadata_MKII.json",
+    "sha256": "aa9905983bdcf848728e6d8fc82619c1993fdbca2743e572aaf904c006a55c47",
+    "vault_signature": "C3-VAULT-OILC-MKII",
+    "c3_verified": true,
+    "verified_at": "2025-07-13T22:15:00Z"
+  }

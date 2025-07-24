@@ -7,9 +7,9 @@ exports.calculateSurvivabilityScore = calculateSurvivabilityScore;
  */
 function calculateSurvivabilityScore(inputs) {
     console.log("Calculating survivability score...");
-    const { herdReport, walletReport, devReport, marketFlow, liquidityCycles, regionalLiquidity, consumerProfile, } = inputs;
+    var herdReport = inputs.herdReport, walletReport = inputs.walletReport, devReport = inputs.devReport, marketFlow = inputs.marketFlow, liquidityCycles = inputs.liquidityCycles, regionalLiquidity = inputs.regionalLiquidity, consumerProfile = inputs.consumerProfile;
     // Basic weighted scoring (we can fine-tune later)
-    let score = 100;
+    var score = 100;
     // Penalize for emotional herding (too much shrimp activity)
     if (consumerProfile.shrimpPercent > 60) {
         score -= 20;
@@ -30,4 +30,3 @@ function calculateSurvivabilityScore(inputs) {
     score = Math.max(0, Math.min(100, score));
     return score;
 }
-//# sourceMappingURL=survivabilityScore.js.map

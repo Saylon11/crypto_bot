@@ -19,4 +19,3 @@ exports.devWallets = [
         initialBalance: 1000000
     }
 ];
-//# sourceMappingURL=devWalletList.js.map

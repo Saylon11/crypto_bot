@@ -1,0 +1,92 @@
+[
+  {
+    "sessionId": "raid-1753227276689",
+    "startTime": "2025-07-22T23:34:36.689Z",
+    "totalRaids": 10,
+    "successfulRaids": 10,
+    "failedRaids": 0,
+    "totalVolume": 0.49999999999999994,
+    "raids": [
+      {
+        "raidNumber": 1,
+        "amount": 0.05,
+        "success": true,
+        "txSignature": "mock_signature_1753227276687",
+        "tokensReceived": 50000,
+        "timestamp": "2025-07-22T23:34:36.698Z"
+      },
+      {
+        "raidNumber": 2,
+        "amount": 0.05,
+        "success": true,
+        "txSignature": "mock_signature_1753227280701",
+        "tokensReceived": 50000,
+        "timestamp": "2025-07-22T23:34:40.701Z"
+      },
+      {
+        "raidNumber": 3,
+        "amount": 0.05,
+        "success": true,
+        "txSignature": "mock_signature_1753227284704",
+        "tokensReceived": 50000,
+        "timestamp": "2025-07-22T23:34:44.704Z"
+      },
+      {
+        "raidNumber": 4,
+        "amount": 0.05,
+        "success": true,
+        "txSignature": "mock_signature_1753227288707",
+        "tokensReceived": 50000,
+        "timestamp": "2025-07-22T23:34:48.708Z"
+      },
+      {
+        "raidNumber": 5,
+        "amount": 0.05,
+        "success": true,
+        "txSignature": "mock_signature_1753227292711",
+        "tokensReceived": 50000,
+        "timestamp": "2025-07-22T23:34:52.711Z"
+      },
+      {
+        "raidNumber": 6,
+        "amount": 0.05,
+        "success": true,
+        "txSignature": "mock_signature_1753227296714",
+        "tokensReceived": 50000,
+        "timestamp": "2025-07-22T23:34:56.714Z"
+      },
+      {
+        "raidNumber": 7,
+        "amount": 0.05,
+        "success": true,
+        "txSignature": "mock_signature_1753227300718",
+        "tokensReceived": 50000,
+        "timestamp": "2025-07-22T23:35:00.718Z"
+      },
+      {
+        "raidNumber": 8,
+        "amount": 0.05,
+        "success": true,
+        "txSignature": "mock_signature_1753227304722",
+        "tokensReceived": 50000,
+        "timestamp": "2025-07-22T23:35:04.723Z"
+      },
+      {
+        "raidNumber": 9,
+        "amount": 0.05,
+        "success": true,
+        "txSignature": "mock_signature_1753227308727",
+        "tokensReceived": 50000,
+        "timestamp": "2025-07-22T23:35:08.727Z"
+      },
+      {
+        "raidNumber": 10,
+        "amount": 0.05,
+        "success": true,
+        "txSignature": "mock_signature_1753227312729",
+        "tokensReceived": 50000,
+        "timestamp": "2025-07-22T23:35:12.729Z"
+      }
+    ]
+  }
+]

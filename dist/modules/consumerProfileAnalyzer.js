@@ -7,12 +7,12 @@ exports.analyzeConsumerProfiles = analyzeConsumerProfiles;
  */
 function analyzeConsumerProfiles(wallets) {
     console.log("Analyzing consumer profiles...");
-    const shrimpThreshold = 500;
-    const dolphinThreshold = 5000;
-    let shrimpCount = 0;
-    let dolphinCount = 0;
-    let whaleCount = 0;
-    wallets.forEach(wallet => {
+    var shrimpThreshold = 500;
+    var dolphinThreshold = 5000;
+    var shrimpCount = 0;
+    var dolphinCount = 0;
+    var whaleCount = 0;
+    wallets.forEach(function (wallet) {
         if (wallet.amount <= shrimpThreshold) {
             shrimpCount++;
         }
@@ -23,11 +23,10 @@ function analyzeConsumerProfiles(wallets) {
             whaleCount++;
         }
     });
-    const total = shrimpCount + dolphinCount + whaleCount || 1; // Prevent divide by 0
+    var total = shrimpCount + dolphinCount + whaleCount || 1; // Prevent divide by 0
     return {
         shrimpPercent: (shrimpCount / total) * 100,
         dolphinPercent: (dolphinCount / total) * 100,
         whalePercent: (whaleCount / total) * 100,
     };
 }
-//# sourceMappingURL=consumerProfileAnalyzer.js.map

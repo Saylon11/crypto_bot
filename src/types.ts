@@ -1,62 +1,51 @@
-import {
-  DataV2,
-  createCreateMetadataAccountV3Instruction,
-  CreateMetadataAccountArgsV3,
-} from "@metaplex-foundation/mpl-token-metadata";
-import { PublicKey, Transaction } from "@solana/web3.js";
+// HootBot/src/types.ts
 
-const METADATA_PROGRAM_ID = new PublicKey("metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s");
+export interface TradeData {
+  tokenMint: string;
+  amount: number;
+  side: 'buy' | 'sell';
+  timestamp: number;
+  signature?: string;
+}
 
-export async function createOilcMetadata(
-  connection: any,
-  wallet: { publicKey: PublicKey },
-  mint: string,
-  name: string,
-  symbol: string,
-  uri: string
-) {
-  const [metadataPDA] = await PublicKey.findProgramAddress(
-    [
-      Buffer.from("metadata"),
-      METADATA_PROGRAM_ID.toBuffer(),
-      new PublicKey(mint).toBuffer(),
-    ],
-    METADATA_PROGRAM_ID
-  );
+export interface CommandLineArgs {
+  target?: string;
+  amount?: number;
+  mode?: string;
+}
 
-  const metadataData: DataV2 = {
-    name: name,
-    symbol: symbol,
-    uri: uri,
-    sellerFeeBasisPoints: 0,
-    creators: [
-      {
-        address: wallet.publicKey,
-        verified: true,
-        share: 100,
-      },
-    ],
-    collection: null,
-    uses: null,
-  };
+export interface Config {
+  rpcUrl: string;
+  walletSecretKey: string;
+  targetToken?: string;
+  tradeAmount: number;
+  slippage: number;
+}
 
-  const instruction = createCreateMetadataAccountV3Instruction(
-    {
-      metadata: metadataPDA,
-      mint: new PublicKey(mint),
-      mintAuthority: wallet.publicKey,
-      payer: wallet.publicKey,
-      updateAuthority: wallet.publicKey,
-    },
-    {
-      createMetadataAccountArgsV3: {
-        data: metadataData,
-        isMutable: true,
-        collectionDetails: null,
-      } as CreateMetadataAccountArgsV3,
-    }
-  );
+export interface TokenReport {
+  tokenMint: string;
+  name?: string;
+  symbol?: string;
+  price?: number;
+  volume24h?: number;
+  marketCap?: number;
+  holders?: number;
+  rugProbability?: number;
+  devActivity?: number;
+}
 
-  const transaction = new Transaction().add(instruction);
-  return transaction;
+export interface NewToken {
+  mint: string;
+  name?: string;
+  symbol?: string;
+  createdAt: number;
+  creator?: string;
+}
+
+export interface WalletData {
+  address: string;
+  balance: number;
+  type?: 'buy' | 'sell';
+  timestamp?: number;
+  amount?: number;
 }

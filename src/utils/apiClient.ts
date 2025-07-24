@@ -1,9 +1,11 @@
+// src/utils/apiClient.ts
+
 import axios from "axios";
 import { WalletData } from "../types";
 import {
   analyzeWalletConcentration,
   TransferConcentrationInput,
-} from "../modules/walletConcentration"; // Corrected path
+} from "../modules/walletConcentration";
 
 const HELIUS_API_KEY = process.env.HELIUS_API_KEY as string;
 const TOKEN_ADDRESS = process.env.TEST_TOKEN_ADDRESS as string;
@@ -25,8 +27,7 @@ export async function fetchBehaviorFromHelius(walletAddress: string): Promise<Wa
     const transactions = response.data || [];
     console.log(`📊 Fetched ${transactions.length} raw transactions from Helius`);
 
-    // Define the type for elements in walletTransfers for clarity
-    const walletTransfers: TransferConcentrationInput[] = transactions.flatMap((tx: any) => { // Removed index as it's not used
+    const walletTransfers: TransferConcentrationInput[] = transactions.flatMap((tx: any) => {
       const transfers = tx?.events?.tokenTransfers || [];
 
       const fallbackTransfers =
@@ -84,11 +85,11 @@ export async function fetchBehaviorFromHelius(walletAddress: string): Promise<Wa
             ? new Date(tx.timestamp).getTime()
             : Date.now(),
           from: t.fromUserAccount || t.source || t.accountKeys?.[0] || "unknown",
-          to: t.toUserAccount || t.destination || t.accountKeys?.[1] || "unknown",
+          toUserAccount: t.toUserAccount || t.destination || t.accountKeys?.[1] || "unknown",
           amount: parseFloat(t.amount || t.parsed?.info?.amount || "0"),
-          mint: TOKEN_ADDRESS, // Assuming TOKEN_ADDRESS is the relevant mint for this analysis
-          priceChangePercent: 0, // Placeholder
-          totalBalance: 1000 // Placeholder
+          mint: TOKEN_ADDRESS,
+          priceChangePercent: 0,
+          totalBalance: 1000
         };
       }).filter(Boolean);
     });
@@ -101,13 +102,13 @@ export async function fetchBehaviorFromHelius(walletAddress: string): Promise<Wa
     const walletData: WalletData[] = walletTransfers.map((t: any) => ({
       walletAddress: t.from,
       tokenAddress: t.mint,
-      amount: t.amount, // t.amount is already a number from walletTransfers mapping
+      amount: t.amount,
       timestamp: t.timestamp,
       priceChangePercent: t.priceChangePercent,
       totalBalance: t.totalBalance,
+      type: t.amount > 0 ? "buy" : "sell",
     }));
 
-    // Call analyzeWalletConcentration with walletTransfers, which contains 'toUserAccount' and 'amount' fields
     const walletDepthTarget = analyzeWalletConcentration(walletTransfers);
     console.log(`🧠 Wallet Concentration Target: Top ${walletDepthTarget} wallets`);
     console.log(`✅ Parsed ${walletData.length} behavioral events from Helius.`);

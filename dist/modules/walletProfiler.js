@@ -7,30 +7,18 @@ exports.profileWallets = profileWallets;
  */
 function profileWallets(wallets) {
     console.log("Profiling wallets...");
-    const shrimpThreshold = 500;
-    const dolphinThreshold = 5000;
-    let shrimpCount = 0;
-    let dolphinCount = 0;
-    let whaleCount = 0;
-    wallets.forEach(wallet => {
-        if (wallet.amount <= shrimpThreshold) {
-            shrimpCount++;
-        }
-        else if (wallet.amount <= dolphinThreshold) {
-            dolphinCount++;
-        }
-        else {
-            whaleCount++;
-        }
-    });
-    const total = shrimpCount + dolphinCount + whaleCount || 1; // Prevent divide by 0
+    var shrimpThreshold = 500;
+    var dolphinThreshold = 5000;
+    var shrimps = wallets.filter(function (w) { return w.amount <= shrimpThreshold; });
+    var dolphins = wallets.filter(function (w) { return w.amount > shrimpThreshold && w.amount <= dolphinThreshold; });
+    var whales = wallets.filter(function (w) { return w.amount > dolphinThreshold; });
+    var total = wallets.length || 1; // Prevent divide by 0
     return {
-        shrimps: wallets.filter(w => w.amount <= shrimpThreshold),
-        dolphins: wallets.filter(w => w.amount > shrimpThreshold && w.amount <= dolphinThreshold),
-        whales: wallets.filter(w => w.amount > dolphinThreshold),
-        shrimpPercent: 0,
-        dolphinPercent: 0,
-        whalePercent: 0
+        shrimps: shrimps,
+        dolphins: dolphins,
+        whales: whales,
+        shrimpPercent: (shrimps.length / total) * 100,
+        dolphinPercent: (dolphins.length / total) * 100,
+        whalePercent: (whales.length / total) * 100
     };
 }
-//# sourceMappingURL=walletProfiler.js.map

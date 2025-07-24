@@ -8,14 +8,14 @@ exports.mapRegionalLiquidity = mapRegionalLiquidity;
  */
 function mapRegionalLiquidity(liquidityTimestamps) {
     console.log("Mapping regional liquidity...");
-    const regionActivity = {
+    var regionActivity = {
         "Asia (UTC+8 to UTC+10)": 0,
         "Europe (UTC+0 to UTC+3)": 0,
         "US (UTC-5 to UTC-8)": 0,
         "Other": 0,
     };
-    liquidityTimestamps.forEach(timestamp => {
-        const utcHour = new Date(timestamp * 1000).getUTCHours();
+    liquidityTimestamps.forEach(function (timestamp) {
+        var utcHour = new Date(timestamp * 1000).getUTCHours();
         if (utcHour >= 0 && utcHour <= 3) {
             regionActivity["Europe (UTC+0 to UTC+3)"]++;
         }
@@ -30,7 +30,6 @@ function mapRegionalLiquidity(liquidityTimestamps) {
         }
     });
     return {
-        regionActivity,
+        regionActivity: regionActivity,
     };
 }
-//# sourceMappingURL=regionalLiquidityMapper.js.map
