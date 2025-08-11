@@ -93,7 +93,7 @@ function recordTradeResult({ directive, result, marketSnapshot }) {
       
       // Features for ML
       featureVector: extractFeatures(marketSnapshot),
-      
+  featureVector: validateAndFixVector(extractFeatures(marketSnapshot)),  featureVector: validateAndFixVector(extractFeatures(marketSnapshot)),      
       // Decision data
       decision: directive.action,
       executionProfile: directive.executionProfile || 'UNKNOWN',
@@ -177,3 +177,67 @@ module.exports = {
   getPerformanceStats,
   extractFeatures
 };
+
+// Vector validation function
+function validateAndFixVector(featureVector) {
+  if (!Array.isArray(featureVector)) {
+    console.warn('⚠️ Invalid feature vector type - creating default');
+    return Array(12).fill(0.5);
+  }
+  
+  if (featureVector.length !== 12) {
+    console.warn(`⚠️ Invalid vector length: ${featureVector.length} - fixing`);
+    
+    if (featureVector.length < 12) {
+      // Pad with defaults
+      while (featureVector.length < 12) {
+        featureVector.push(0.5);
+      }
+    } else {
+      // Truncate
+      featureVector = featureVector.slice(0, 12);
+    }
+  }
+  
+  // Ensure all values are numbers between 0 and 1
+  return featureVector.map(v => {
+    const num = Number(v);
+    if (isNaN(num)) return 0.5;
+    return Math.max(0, Math.min(1, num));
+  });
+}
+
+// Export for use
+module.exports.validateAndFixVector = validateAndFixVector;
+
+// Vector validation function
+function validateAndFixVector(featureVector) {
+  if (!Array.isArray(featureVector)) {
+    console.warn('⚠️ Invalid feature vector type - creating default');
+    return Array(12).fill(0.5);
+  }
+  
+  if (featureVector.length !== 12) {
+    console.warn(`⚠️ Invalid vector length: ${featureVector.length} - fixing`);
+    
+    if (featureVector.length < 12) {
+      // Pad with defaults
+      while (featureVector.length < 12) {
+        featureVector.push(0.5);
+      }
+    } else {
+      // Truncate
+      featureVector = featureVector.slice(0, 12);
+    }
+  }
+  
+  // Ensure all values are numbers between 0 and 1
+  return featureVector.map(v => {
+    const num = Number(v);
+    if (isNaN(num)) return 0.5;
+    return Math.max(0, Math.min(1, num));
+  });
+}
+
+// Export for use
+module.exports.validateAndFixVector = validateAndFixVector;
