@@ -1,0 +1,53 @@
+{
+  "sessionId": "session_1754801609303",
+  "startTime": "2025-08-10T04:53:29.303Z",
+  "endTime": null,
+  "runtime": "0.0",
+  "cyclesCompleted": 0,
+  "tokensAnalyzed": {},
+  "tokenDetails": [],
+  "trades": [],
+  "mindAnalyses": [
+    {
+      "timestamp": 1754801609578,
+      "survivabilityScore": 0,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "No target configured",
+      "panicScore": 0,
+      "marketFlowStrength": 0,
+      "riskLevel": "high",
+      "whaleActivity": false,
+      "confidenceScore": 0,
+      "consumerProfile": {
+        "shrimpPercent": 0,
+        "dolphinPercent": 0,
+        "whalePercent": 0
+      }
+    }
+  ],
+  "actionCounts": {
+    "BUY": 0,
+    "SELL": 0,
+    "HOLD": 1,
+    "PAUSE": 0,
+    "EXIT": 0
+  },
+  "profitMetrics": {
+    "totalSpent": 0,
+    "totalEarned": 0,
+    "netProfit": 0,
+    "winningTrades": 0,
+    "losingTrades": 0,
+    "successRate": 0
+  },
+  "marketConditions": {
+    "averageSurvivability": 0,
+    "averagePanicScore": 0,
+    "averageFlowStrength": 0,
+    "bullishCycles": 0,
+    "bearishCycles": 0
+  },
+  "uniqueTokensCount": 0,
+  "lastUpdated": "2025-08-10T04:53:29.578Z"
+}

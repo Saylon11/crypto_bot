@@ -1,0 +1,2701 @@
+{
+  "sessionId": "session_1754550827890",
+  "startTime": "2025-08-07T07:13:47.890Z",
+  "endTime": "2025-08-07T15:39:14.731Z",
+  "status": "completed",
+  "tokensScanned": 394,
+  "tokensAnalyzed": 145,
+  "uniqueTokens": [
+    "solana_3FAxF5cBFwcreM7Qp8mR1vNaYwkLYBbdbzPfsUy9NYqW",
+    "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+    "solana_Cz3sVAN3QhA9nPfvvkWiotBitceqnoN1LAkhRhpat7nb",
+    "solana_329jv8vUuoSh87V9LhePircDFyESbDNE4eSuqiHrcK9E",
+    "solana_iMyvpMGPhFAxEU54X9Lwfg1itcBjC6VXMaYrN1BVzdd",
+    "solana_BSh8SjXvauDvNRAzsVGibW1kB8eaaXWJYnf36SC9T7HC",
+    "solana_GCgn1NEtxZaNRVfZFno1W1Br5VdvUg7MYSxDCgSRFSM4",
+    "solana_UKSPrYDU4veB4cAfV9HkzNg9gNP1jsoch8oySMG9tcJ",
+    "solana_3mgxf9VVDd82E75bovuAJPS1wYmJoZCAo4MB6zpQDjnv",
+    "solana_6GDrReNVfyjQDCuGMrKdG2JU7Uj8NCvBt2ukaL2mDj1L",
+    "solana_4zvyyRUrQKHMqAYd8DTjWRUshfSwxLTmP4ysd2uGuDwU",
+    "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+    "solana_5zdFrEUefk2h31B79iSiT3F92kCXw8xevE5kccFFd23f",
+    "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+    "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+    "solana_5eHXH5KGtAkv2EGYmCz4kmbuxFQcszaQVcn14rf8NwWd",
+    "solana_ECfLV5U3378wKtqW2Nz2cYiHF6fU7SbV3rJJ654LSZ6i",
+    "solana_GoiKMZNTRv8RGneuKvyqLdvxcytdD58HDGEVZoQNGRp6"
+  ],
+  "mindAnalyses": [
+    {
+      "timestamp": "2025-08-07T07:13:51.460Z",
+      "token": "XD ",
+      "mint": "solana_3FAxF5cBFwcreM7Qp8mR1vNaYwkLYBbdbzPfsUy9NYqW",
+      "bullScore": -1,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": true,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:13:59.369Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:14:07.178Z",
+      "token": "TROLGA ",
+      "mint": "solana_Cz3sVAN3QhA9nPfvvkWiotBitceqnoN1LAkhRhpat7nb",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:14:15.205Z",
+      "token": "LOL ",
+      "mint": "solana_329jv8vUuoSh87V9LhePircDFyESbDNE4eSuqiHrcK9E",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:14:23.463Z",
+      "token": "Topless ",
+      "mint": "solana_iMyvpMGPhFAxEU54X9Lwfg1itcBjC6VXMaYrN1BVzdd",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:15:01.685Z",
+      "token": "XD ",
+      "mint": "solana_3FAxF5cBFwcreM7Qp8mR1vNaYwkLYBbdbzPfsUy9NYqW",
+      "bullScore": -3,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:15:09.611Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:15:18.637Z",
+      "token": "TROLGA ",
+      "mint": "solana_Cz3sVAN3QhA9nPfvvkWiotBitceqnoN1LAkhRhpat7nb",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:15:27.244Z",
+      "token": "LOL ",
+      "mint": "solana_329jv8vUuoSh87V9LhePircDFyESbDNE4eSuqiHrcK9E",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:15:35.001Z",
+      "token": "Topless ",
+      "mint": "solana_iMyvpMGPhFAxEU54X9Lwfg1itcBjC6VXMaYrN1BVzdd",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:16:13.368Z",
+      "token": "XD ",
+      "mint": "solana_3FAxF5cBFwcreM7Qp8mR1vNaYwkLYBbdbzPfsUy9NYqW",
+      "bullScore": -1,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": true,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:16:21.292Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:16:29.170Z",
+      "token": "TROLGA ",
+      "mint": "solana_Cz3sVAN3QhA9nPfvvkWiotBitceqnoN1LAkhRhpat7nb",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:16:37.283Z",
+      "token": "LOL ",
+      "mint": "solana_329jv8vUuoSh87V9LhePircDFyESbDNE4eSuqiHrcK9E",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:16:45.703Z",
+      "token": "Topless ",
+      "mint": "solana_iMyvpMGPhFAxEU54X9Lwfg1itcBjC6VXMaYrN1BVzdd",
+      "bullScore": -1,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": true,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:17:23.816Z",
+      "token": "XD ",
+      "mint": "solana_3FAxF5cBFwcreM7Qp8mR1vNaYwkLYBbdbzPfsUy9NYqW",
+      "bullScore": -1,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": true,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:17:31.730Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:17:39.633Z",
+      "token": "TROLGA ",
+      "mint": "solana_Cz3sVAN3QhA9nPfvvkWiotBitceqnoN1LAkhRhpat7nb",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:17:47.595Z",
+      "token": "LOL ",
+      "mint": "solana_329jv8vUuoSh87V9LhePircDFyESbDNE4eSuqiHrcK9E",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:17:55.661Z",
+      "token": "Topless ",
+      "mint": "solana_iMyvpMGPhFAxEU54X9Lwfg1itcBjC6VXMaYrN1BVzdd",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:18:33.801Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:18:41.781Z",
+      "token": "TROLGA ",
+      "mint": "solana_Cz3sVAN3QhA9nPfvvkWiotBitceqnoN1LAkhRhpat7nb",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:18:49.629Z",
+      "token": "LOL ",
+      "mint": "solana_329jv8vUuoSh87V9LhePircDFyESbDNE4eSuqiHrcK9E",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:18:58.038Z",
+      "token": "XD ",
+      "mint": "solana_3FAxF5cBFwcreM7Qp8mR1vNaYwkLYBbdbzPfsUy9NYqW",
+      "bullScore": -3,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:19:06.581Z",
+      "token": "Topless ",
+      "mint": "solana_iMyvpMGPhFAxEU54X9Lwfg1itcBjC6VXMaYrN1BVzdd",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:19:45.346Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:19:53.119Z",
+      "token": "TROLGA ",
+      "mint": "solana_Cz3sVAN3QhA9nPfvvkWiotBitceqnoN1LAkhRhpat7nb",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:20:01.439Z",
+      "token": "LOL ",
+      "mint": "solana_329jv8vUuoSh87V9LhePircDFyESbDNE4eSuqiHrcK9E",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:20:09.338Z",
+      "token": "XD ",
+      "mint": "solana_3FAxF5cBFwcreM7Qp8mR1vNaYwkLYBbdbzPfsUy9NYqW",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:20:17.042Z",
+      "token": "Topless ",
+      "mint": "solana_iMyvpMGPhFAxEU54X9Lwfg1itcBjC6VXMaYrN1BVzdd",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:20:59.970Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:21:07.625Z",
+      "token": "TROLGA ",
+      "mint": "solana_Cz3sVAN3QhA9nPfvvkWiotBitceqnoN1LAkhRhpat7nb",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:21:15.553Z",
+      "token": "LOL ",
+      "mint": "solana_329jv8vUuoSh87V9LhePircDFyESbDNE4eSuqiHrcK9E",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:21:23.456Z",
+      "token": "XD ",
+      "mint": "solana_3FAxF5cBFwcreM7Qp8mR1vNaYwkLYBbdbzPfsUy9NYqW",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T07:21:31.208Z",
+      "token": "Topless ",
+      "mint": "solana_iMyvpMGPhFAxEU54X9Lwfg1itcBjC6VXMaYrN1BVzdd",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T08:24:11.614Z",
+      "token": "XD ",
+      "mint": "solana_3FAxF5cBFwcreM7Qp8mR1vNaYwkLYBbdbzPfsUy9NYqW",
+      "bullScore": -3,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T08:24:19.469Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T08:25:28.998Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T08:25:36.954Z",
+      "token": "TROLGA ",
+      "mint": "solana_Cz3sVAN3QhA9nPfvvkWiotBitceqnoN1LAkhRhpat7nb",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T08:25:51.912Z",
+      "token": "BARKcoin ",
+      "mint": "solana_BSh8SjXvauDvNRAzsVGibW1kB8eaaXWJYnf36SC9T7HC",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T08:28:00.533Z",
+      "token": "XD ",
+      "mint": "solana_3FAxF5cBFwcreM7Qp8mR1vNaYwkLYBbdbzPfsUy9NYqW",
+      "bullScore": -3,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T08:28:08.217Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": -3,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T08:28:16.204Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T08:28:24.120Z",
+      "token": "TROLGA ",
+      "mint": "solana_Cz3sVAN3QhA9nPfvvkWiotBitceqnoN1LAkhRhpat7nb",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T08:28:31.753Z",
+      "token": "BARKcoin ",
+      "mint": "solana_BSh8SjXvauDvNRAzsVGibW1kB8eaaXWJYnf36SC9T7HC",
+      "bullScore": -1,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": true,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T11:00:05.827Z",
+      "token": "XD ",
+      "mint": "solana_3FAxF5cBFwcreM7Qp8mR1vNaYwkLYBbdbzPfsUy9NYqW",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T11:00:14.150Z",
+      "token": "TROLGA ",
+      "mint": "solana_Cz3sVAN3QhA9nPfvvkWiotBitceqnoN1LAkhRhpat7nb",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T11:23:44.471Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T11:23:53.132Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T11:24:00.969Z",
+      "token": "BARKcoin ",
+      "mint": "solana_BSh8SjXvauDvNRAzsVGibW1kB8eaaXWJYnf36SC9T7HC",
+      "bullScore": 9,
+      "survivability": 68,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": true,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T12:24:43.556Z",
+      "token": "XD ",
+      "mint": "solana_3FAxF5cBFwcreM7Qp8mR1vNaYwkLYBbdbzPfsUy9NYqW",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T12:24:51.573Z",
+      "token": "TROLGA ",
+      "mint": "solana_Cz3sVAN3QhA9nPfvvkWiotBitceqnoN1LAkhRhpat7nb",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T12:24:59.797Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T12:25:07.910Z",
+      "token": "Topless ",
+      "mint": "solana_iMyvpMGPhFAxEU54X9Lwfg1itcBjC6VXMaYrN1BVzdd",
+      "bullScore": -3,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T12:40:14.027Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T12:45:37.947Z",
+      "token": "TROLLBOOK ",
+      "mint": "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T12:45:49.207Z",
+      "token": "XD ",
+      "mint": "solana_3FAxF5cBFwcreM7Qp8mR1vNaYwkLYBbdbzPfsUy9NYqW",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T12:45:58.373Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T12:46:06.558Z",
+      "token": "Bosswife ",
+      "mint": "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T12:46:14.338Z",
+      "token": "TROLGA ",
+      "mint": "solana_Cz3sVAN3QhA9nPfvvkWiotBitceqnoN1LAkhRhpat7nb",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T12:59:12.725Z",
+      "token": "TROLLBOOK ",
+      "mint": "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T12:59:21.402Z",
+      "token": "XD ",
+      "mint": "solana_3FAxF5cBFwcreM7Qp8mR1vNaYwkLYBbdbzPfsUy9NYqW",
+      "bullScore": -3,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T12:59:29.221Z",
+      "token": "Bosswife ",
+      "mint": "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+      "bullScore": -3,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T13:00:56.720Z",
+      "token": "TROLGA ",
+      "mint": "solana_Cz3sVAN3QhA9nPfvvkWiotBitceqnoN1LAkhRhpat7nb",
+      "bullScore": -16,
+      "survivability": 58,
+      "action": "PAUSE",
+      "riskLevel": "high",
+      "isUsingMockData": true,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": true,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T13:01:03.736Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 22,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": true,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 75,
+        "whaleActivity": true,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:13:16.741Z",
+      "token": "TROLLBOOK ",
+      "mint": "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:13:24.592Z",
+      "token": "Bosswife ",
+      "mint": "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:13:32.492Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:13:40.604Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:13:48.605Z",
+      "token": "Topless ",
+      "mint": "solana_iMyvpMGPhFAxEU54X9Lwfg1itcBjC6VXMaYrN1BVzdd",
+      "bullScore": -3,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:14:27.298Z",
+      "token": "TROLLBOOK ",
+      "mint": "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:14:35.135Z",
+      "token": "Bosswife ",
+      "mint": "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:14:43.422Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:14:51.355Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:14:59.495Z",
+      "token": "Topless ",
+      "mint": "solana_iMyvpMGPhFAxEU54X9Lwfg1itcBjC6VXMaYrN1BVzdd",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:15:37.788Z",
+      "token": "TROLLBOOK ",
+      "mint": "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:15:45.813Z",
+      "token": "Bosswife ",
+      "mint": "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:15:54.321Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:16:02.169Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:16:10.556Z",
+      "token": "LCKO ",
+      "mint": "solana_ECfLV5U3378wKtqW2Nz2cYiHF6fU7SbV3rJJ654LSZ6i",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:16:49.337Z",
+      "token": "TROLLBOOK ",
+      "mint": "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:16:58.902Z",
+      "token": "Bosswife ",
+      "mint": "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+      "bullScore": -1,
+      "survivability": 48,
+      "action": "PAUSE",
+      "riskLevel": "high",
+      "isUsingMockData": true,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 50,
+        "whaleActivity": true,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:17:07.166Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:22:27.468Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": -6,
+      "survivability": 58,
+      "action": "PAUSE",
+      "riskLevel": "high",
+      "isUsingMockData": true,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": true,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:22:34.477Z",
+      "token": "LCKO ",
+      "mint": "solana_ECfLV5U3378wKtqW2Nz2cYiHF6fU7SbV3rJJ654LSZ6i",
+      "bullScore": -11,
+      "survivability": 48,
+      "action": "PAUSE",
+      "riskLevel": "high",
+      "isUsingMockData": true,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 50,
+        "whaleActivity": true,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:25:10.801Z",
+      "token": "TROLLBOOK ",
+      "mint": "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+      "bullScore": -16,
+      "survivability": 58,
+      "action": "PAUSE",
+      "riskLevel": "high",
+      "isUsingMockData": true,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": true,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:25:19.106Z",
+      "token": "Bosswife ",
+      "mint": "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:25:27.528Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:25:35.537Z",
+      "token": "LCKO ",
+      "mint": "solana_ECfLV5U3378wKtqW2Nz2cYiHF6fU7SbV3rJJ654LSZ6i",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:25:44.481Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:26:24.366Z",
+      "token": "TROLLBOOK ",
+      "mint": "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:26:32.725Z",
+      "token": "LCKO ",
+      "mint": "solana_ECfLV5U3378wKtqW2Nz2cYiHF6fU7SbV3rJJ654LSZ6i",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:26:40.698Z",
+      "token": "Bosswife ",
+      "mint": "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+      "bullScore": -1,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": true,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:26:49.272Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:26:57.632Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:27:37.065Z",
+      "token": "TROLLBOOK ",
+      "mint": "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:27:45.203Z",
+      "token": "LCKO ",
+      "mint": "solana_ECfLV5U3378wKtqW2Nz2cYiHF6fU7SbV3rJJ654LSZ6i",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:27:53.036Z",
+      "token": "Bosswife ",
+      "mint": "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+      "bullScore": -3,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:28:01.055Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:28:09.646Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:28:48.485Z",
+      "token": "TROLLBOOK ",
+      "mint": "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:28:56.658Z",
+      "token": "LCKO ",
+      "mint": "solana_ECfLV5U3378wKtqW2Nz2cYiHF6fU7SbV3rJJ654LSZ6i",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:29:04.946Z",
+      "token": "Bosswife ",
+      "mint": "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+      "bullScore": -3,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:29:13.538Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:29:21.845Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:30:00.501Z",
+      "token": "TROLLBOOK ",
+      "mint": "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:30:09.092Z",
+      "token": "LCKO ",
+      "mint": "solana_ECfLV5U3378wKtqW2Nz2cYiHF6fU7SbV3rJJ654LSZ6i",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:30:16.865Z",
+      "token": "Bosswife ",
+      "mint": "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+      "bullScore": -1,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": true,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:30:25.068Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:30:33.526Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:31:12.287Z",
+      "token": "TROLLBOOK ",
+      "mint": "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:31:20.542Z",
+      "token": "LCKO ",
+      "mint": "solana_ECfLV5U3378wKtqW2Nz2cYiHF6fU7SbV3rJJ654LSZ6i",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:31:28.469Z",
+      "token": "Bosswife ",
+      "mint": "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:31:36.692Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:31:44.596Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:32:23.618Z",
+      "token": "TROLLBOOK ",
+      "mint": "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:32:31.727Z",
+      "token": "LCKO ",
+      "mint": "solana_ECfLV5U3378wKtqW2Nz2cYiHF6fU7SbV3rJJ654LSZ6i",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:32:39.871Z",
+      "token": "Bosswife ",
+      "mint": "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+      "bullScore": -3,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:32:48.060Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:32:56.712Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:33:35.303Z",
+      "token": "TROLLBOOK ",
+      "mint": "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:33:43.630Z",
+      "token": "LCKO ",
+      "mint": "solana_ECfLV5U3378wKtqW2Nz2cYiHF6fU7SbV3rJJ654LSZ6i",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:33:52.025Z",
+      "token": "Bosswife ",
+      "mint": "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+      "bullScore": -1,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": true,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:33:59.941Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:34:08.461Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:34:47.055Z",
+      "token": "TROLLBOOK ",
+      "mint": "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:34:55.409Z",
+      "token": "LCKO ",
+      "mint": "solana_ECfLV5U3378wKtqW2Nz2cYiHF6fU7SbV3rJJ654LSZ6i",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:35:03.549Z",
+      "token": "Bosswife ",
+      "mint": "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+      "bullScore": -1,
+      "survivability": 68,
+      "action": "AVOID",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": true,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:35:11.973Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:35:19.824Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:35:58.529Z",
+      "token": "TROLLBOOK ",
+      "mint": "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:36:07.186Z",
+      "token": "LCKO ",
+      "mint": "solana_ECfLV5U3378wKtqW2Nz2cYiHF6fU7SbV3rJJ654LSZ6i",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:36:15.176Z",
+      "token": "Bosswife ",
+      "mint": "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+      "bullScore": 9,
+      "survivability": 68,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": true,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:36:23.225Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:36:31.544Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:37:10.356Z",
+      "token": "TROLLBOOK ",
+      "mint": "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:37:18.626Z",
+      "token": "LCKO ",
+      "mint": "solana_ECfLV5U3378wKtqW2Nz2cYiHF6fU7SbV3rJJ654LSZ6i",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:37:26.500Z",
+      "token": "Bosswife ",
+      "mint": "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+      "bullScore": 7,
+      "survivability": 68,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:37:35.067Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:37:43.072Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 2,
+      "survivability": 73,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:38:22.002Z",
+      "token": "TROLLBOOK ",
+      "mint": "solana_BaV2BjqG7m66agRdMq9i9JmFyq5DGyuTeySFSdPtHtyX",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:38:30.256Z",
+      "token": "LCKO ",
+      "mint": "solana_ECfLV5U3378wKtqW2Nz2cYiHF6fU7SbV3rJJ654LSZ6i",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:38:38.437Z",
+      "token": "Bosswife ",
+      "mint": "solana_9GgoAp2hNxbZcJcrG12cBffF3FQBJEp3riSKyL2RcjVY",
+      "bullScore": 12,
+      "survivability": 73,
+      "action": "HOLD",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:38:46.681Z",
+      "token": "Treasury ",
+      "mint": "solana_4q9YBwa9eFaNF4vnwLKbCbAjzvNtnXWAB1VAWTQaauPz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    },
+    {
+      "timestamp": "2025-08-07T15:38:54.439Z",
+      "token": "TOM ",
+      "mint": "solana_8pa9JZ6CM65cMnjmpr91s6G9YmbZoB1YGiC7q8xJhRjz",
+      "bullScore": 4,
+      "survivability": 78,
+      "action": "PAUSE",
+      "riskLevel": "medium",
+      "isUsingMockData": false,
+      "metrics": {
+        "panicScore": 0,
+        "marketFlow": 25,
+        "whaleActivity": false,
+        "volumeTrend": "stable"
+      }
+    }
+  ],
+  "bullScoreDistribution": {
+    "0": 117,
+    "10": 1,
+    "20": 1,
+    "-10": 23,
+    "-20": 3
+  },
+  "averageBullScore": 2.593103448275862,
+  "highestBullScore": 22,
+  "lowestBullScore": -16,
+  "tradeOpportunities": 0,
+  "tradesExecuted": 0,
+  "buySignals": 0,
+  "sellSignals": 0,
+  "holdSignals": 1,
+  "pauseSignals": 123,
+  "totalSpent": 0,
+  "totalEarned": 0,
+  "netProfit": 0,
+  "positions": [],
+  "cycleCount": 76,
+  "errorsEncountered": 0,
+  "apiCalls": {
+    "helius": 145,
+    "gecko": 76,
+    "jupiter": 0,
+    "pump": 0
+  },
+  "insights": [
+    {
+      "timestamp": "2025-08-07T07:13:48.204Z",
+      "message": "Scanned 11 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T07:13:59.369Z",
+      "message": "New highest Bull Score: 2 for TOM "
+    },
+    {
+      "timestamp": "2025-08-07T07:14:07.178Z",
+      "message": "New highest Bull Score: 4 for TROLGA "
+    },
+    {
+      "timestamp": "2025-08-07T07:14:58.681Z",
+      "message": "Scanned 11 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T07:16:10.544Z",
+      "message": "Scanned 11 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T07:17:20.927Z",
+      "message": "Scanned 11 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T07:18:31.077Z",
+      "message": "Scanned 11 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T07:19:41.984Z",
+      "message": "Scanned 11 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T07:20:56.436Z",
+      "message": "Scanned 11 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T08:24:08.436Z",
+      "message": "Scanned 12 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T08:27:57.229Z",
+      "message": "Scanned 12 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T11:00:02.432Z",
+      "message": "Scanned 12 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T11:24:00.969Z",
+      "message": "New highest Bull Score: 9 for BARKcoin "
+    },
+    {
+      "timestamp": "2025-08-07T11:30:15.559Z",
+      "message": "Scanned 13 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T12:45:27.667Z",
+      "message": "Scanned 14 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T12:59:09.462Z",
+      "message": "Scanned 14 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T13:01:03.736Z",
+      "message": "New highest Bull Score: 22 for TOM "
+    },
+    {
+      "timestamp": "2025-08-07T14:00:05.118Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:01:01.478Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:02:00.563Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:05:05.971Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:05:53.281Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:06:51.283Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:09:42.145Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:10:39.891Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:11:26.841Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:12:25.544Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:16:08.777Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:19:32.317Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:20:24.914Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:23:48.495Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:24:43.394Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:31:03.694Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:31:33.707Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:32:03.723Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:32:33.733Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:33:03.748Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:34:04.570Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:37:21.382Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:40:48.127Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:41:36.242Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:45:16.524Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:48:41.151Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:49:39.664Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:53:23.650Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:57:04.612Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T14:58:03.174Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:01:50.507Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:02:58.710Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:03:28.728Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:03:58.746Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:04:28.757Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:04:58.770Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:05:28.780Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:05:58.793Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:06:28.804Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:06:58.821Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:07:28.828Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:08:42.538Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:12:12.766Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:12:42.784Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:13:13.118Z",
+      "message": "Scanned 15 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:14:24.002Z",
+      "message": "Scanned 15 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:15:34.675Z",
+      "message": "Scanned 15 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:16:46.084Z",
+      "message": "Scanned 15 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:23:38.244Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:24:08.256Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:24:38.365Z",
+      "message": "Scanned 0 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:25:08.775Z",
+      "message": "Scanned 15 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:26:20.229Z",
+      "message": "Scanned 15 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:27:33.199Z",
+      "message": "Scanned 15 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:28:45.153Z",
+      "message": "Scanned 15 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:29:57.337Z",
+      "message": "Scanned 15 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:31:09.019Z",
+      "message": "Scanned 15 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:32:20.002Z",
+      "message": "Scanned 15 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:33:31.964Z",
+      "message": "Scanned 15 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:34:43.925Z",
+      "message": "Scanned 15 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:35:55.242Z",
+      "message": "Scanned 15 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:37:06.930Z",
+      "message": "Scanned 15 tokens from unknown"
+    },
+    {
+      "timestamp": "2025-08-07T15:38:18.371Z",
+      "message": "Scanned 15 tokens from unknown"
+    }
+  ],
+  "warnings": []
+}

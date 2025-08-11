@@ -1,0 +1,3062 @@
+{
+  "sessionId": "session_1754710495129",
+  "startTime": "2025-08-09T03:34:55.129Z",
+  "endTime": null,
+  "runtime": "643.9",
+  "cyclesCompleted": 0,
+  "tokensAnalyzed": {},
+  "tokenDetails": [],
+  "trades": [],
+  "mindAnalyses": [
+    {
+      "timestamp": 1754710503122,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7547169811320755,
+        "dolphinPercent": 0,
+        "whalePercent": 99.24528301886792
+      }
+    },
+    {
+      "timestamp": 1754710685893,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7547169811320755,
+        "dolphinPercent": 0,
+        "whalePercent": 99.24528301886792
+      }
+    },
+    {
+      "timestamp": 1754710867045,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7547169811320755,
+        "dolphinPercent": 0,
+        "whalePercent": 99.24528301886792
+      }
+    },
+    {
+      "timestamp": 1754711067481,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7547169811320755,
+        "dolphinPercent": 0,
+        "whalePercent": 99.24528301886792
+      }
+    },
+    {
+      "timestamp": 1754713073243,
+      "survivabilityScore": 100,
+      "action": "BUY",
+      "suggestedPercentage": 40,
+      "reason": "🎯 OPPORTUNITY: Solid fundamentals detected",
+      "panicScore": 0,
+      "marketFlowStrength": 50,
+      "riskLevel": "low",
+      "whaleActivity": false,
+      "confidenceScore": 66,
+      "consumerProfile": {
+        "shrimpPercent": 69.23076923076923,
+        "dolphinPercent": 11.538461538461538,
+        "whalePercent": 19.230769230769234
+      }
+    },
+    {
+      "timestamp": 1754713342044,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7547169811320755,
+        "dolphinPercent": 0,
+        "whalePercent": 99.24528301886792
+      }
+    },
+    {
+      "timestamp": 1754714420873,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7547169811320755,
+        "dolphinPercent": 0,
+        "whalePercent": 99.24528301886792
+      }
+    },
+    {
+      "timestamp": 1754716397631,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754716878438,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754717996368,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754718178165,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754718360139,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754718545248,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754718729175,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754718910442,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754719093220,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754719274287,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754719455657,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754719636717,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754719818454,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754720001499,
+      "survivabilityScore": 90,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 61,
+      "consumerProfile": {
+        "shrimpPercent": 76.92307692307693,
+        "dolphinPercent": 7.6923076923076925,
+        "whalePercent": 15.384615384615385
+      }
+    },
+    {
+      "timestamp": 1754720208807,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754720397856,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754720582031,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754720763402,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754720944706,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754721128842,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754721310261,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754721495849,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754721679282,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754721860880,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754722041928,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754722224018,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754722407589,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754722588604,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754722776876,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754722966837,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754723148191,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754723330387,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754723532078,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754723713598,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754723894885,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754724076689,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754724258318,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754724439916,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754724627542,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754724808857,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754724990027,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754725171687,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754725353697,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754725562036,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754725743840,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754725925650,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754726106766,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754726292339,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754726491269,
+      "survivabilityScore": 100,
+      "action": "BUY",
+      "suggestedPercentage": 40,
+      "reason": "🎯 OPPORTUNITY: Solid fundamentals detected",
+      "panicScore": 0,
+      "marketFlowStrength": 50,
+      "riskLevel": "low",
+      "whaleActivity": false,
+      "confidenceScore": 66,
+      "consumerProfile": {
+        "shrimpPercent": 67.85714285714286,
+        "dolphinPercent": 17.857142857142858,
+        "whalePercent": 14.285714285714285
+      }
+    },
+    {
+      "timestamp": 1754726672578,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754726856147,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754727037494,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754727227318,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754727413455,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754727594591,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754727775896,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754727961955,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.975609756097561,
+        "dolphinPercent": 0,
+        "whalePercent": 99.02439024390245
+      }
+    },
+    {
+      "timestamp": 1754728154053,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.8032128514056224,
+        "dolphinPercent": 0,
+        "whalePercent": 99.19678714859438
+      }
+    },
+    {
+      "timestamp": 1754728337451,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754728518750,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754728700774,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754728882920,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754729077869,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754729258948,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754729460452,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754729641576,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754729822835,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754730004227,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754730186214,
+      "survivabilityScore": 100,
+      "action": "BUY",
+      "suggestedPercentage": 40,
+      "reason": "🎯 OPPORTUNITY: Solid fundamentals detected",
+      "panicScore": 0,
+      "marketFlowStrength": 50,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 69,
+      "consumerProfile": {
+        "shrimpPercent": 71.42857142857143,
+        "dolphinPercent": 14.285714285714285,
+        "whalePercent": 14.285714285714285
+      }
+    },
+    {
+      "timestamp": 1754730367451,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754730549482,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754730736110,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754730917173,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754731101747,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754731295499,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754731476787,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754731669360,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754731850794,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754732032323,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754732213409,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754732394595,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754732582250,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7604562737642585,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23954372623575
+      }
+    },
+    {
+      "timestamp": 1754732763541,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754732955800,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754733137210,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754733318569,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754733499743,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754733680854,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754733862020,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754734045138,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754734226855,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754734408141,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754734589461,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754734771158,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754734957115,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754735166358,
+      "survivabilityScore": 90,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": false,
+      "confidenceScore": 57,
+      "consumerProfile": {
+        "shrimpPercent": 73.33333333333333,
+        "dolphinPercent": 0,
+        "whalePercent": 26.666666666666668
+      }
+    },
+    {
+      "timestamp": 1754735351991,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754735539300,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754735732271,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754735913731,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754736114979,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754736309424,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754736490712,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754736677606,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754736859223,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754737045197,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754737227899,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754737411019,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754737602629,
+      "survivabilityScore": 100,
+      "action": "BUY",
+      "suggestedPercentage": 40,
+      "reason": "🎯 OPPORTUNITY: Solid fundamentals detected",
+      "panicScore": 0,
+      "marketFlowStrength": 50,
+      "riskLevel": "low",
+      "whaleActivity": false,
+      "confidenceScore": 66,
+      "consumerProfile": {
+        "shrimpPercent": 70.96774193548387,
+        "dolphinPercent": 22.58064516129032,
+        "whalePercent": 6.451612903225806
+      }
+    },
+    {
+      "timestamp": 1754737794013,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754737981564,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754738162832,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754738344074,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754738525448,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754738706611,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754738890071,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754739071934,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754739256933,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754739438488,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754739620813,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754739802535,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754739984885,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754740166753,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754740348104,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754740529298,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754740710398,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754740893893,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754741075562,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754741282618,
+      "survivabilityScore": 100,
+      "action": "BUY",
+      "suggestedPercentage": 40,
+      "reason": "🎯 OPPORTUNITY: Solid fundamentals detected",
+      "panicScore": 0,
+      "marketFlowStrength": 50,
+      "riskLevel": "low",
+      "whaleActivity": false,
+      "confidenceScore": 65,
+      "consumerProfile": {
+        "shrimpPercent": 66.66666666666666,
+        "dolphinPercent": 20,
+        "whalePercent": 13.333333333333334
+      }
+    },
+    {
+      "timestamp": 1754741465901,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754741648291,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754741829383,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754742015925,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754742199172,
+      "survivabilityScore": 90,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 61,
+      "consumerProfile": {
+        "shrimpPercent": 76.92307692307693,
+        "dolphinPercent": 0,
+        "whalePercent": 23.076923076923077
+      }
+    },
+    {
+      "timestamp": 1754742380236,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754742568076,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.8620689655172413,
+        "dolphinPercent": 0,
+        "whalePercent": 99.13793103448276
+      }
+    },
+    {
+      "timestamp": 1754742755270,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.851063829787234,
+        "dolphinPercent": 0,
+        "whalePercent": 99.14893617021276
+      }
+    },
+    {
+      "timestamp": 1754742942540,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7874015748031495,
+        "dolphinPercent": 0,
+        "whalePercent": 99.21259842519686
+      }
+    },
+    {
+      "timestamp": 1754743126833,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754743309638,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754743490940,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754743674213,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754743859028,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754744040726,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754744226079,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754744408588,
+      "survivabilityScore": 100,
+      "action": "BUY",
+      "suggestedPercentage": 40,
+      "reason": "🎯 OPPORTUNITY: Solid fundamentals detected",
+      "panicScore": 0,
+      "marketFlowStrength": 50,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 69,
+      "consumerProfile": {
+        "shrimpPercent": 75,
+        "dolphinPercent": 17.857142857142858,
+        "whalePercent": 7.142857142857142
+      }
+    },
+    {
+      "timestamp": 1754744610029,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754744791591,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754744977635,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754745159263,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754745343227,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754745539386,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754745720584,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754745901900,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754746083861,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754746268794,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754746450456,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754746632358,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754746814115,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754747002191,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754747190445,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754747378170,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754747570331,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754747751754,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754747945197,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754748169373,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754748350791,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754748555295,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754748764632,
+      "survivabilityScore": 90,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": false,
+      "confidenceScore": 57,
+      "consumerProfile": {
+        "shrimpPercent": 76.92307692307693,
+        "dolphinPercent": 0,
+        "whalePercent": 23.076923076923077
+      }
+    },
+    {
+      "timestamp": 1754748945951,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    },
+    {
+      "timestamp": 1754749129206,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.7633587786259541,
+        "dolphinPercent": 0,
+        "whalePercent": 99.23664122137404
+      }
+    }
+  ],
+  "actionCounts": {
+    "BUY": 6,
+    "SELL": 0,
+    "HOLD": 172,
+    "PAUSE": 0,
+    "EXIT": 0
+  },
+  "profitMetrics": {
+    "totalSpent": 0,
+    "totalEarned": 0,
+    "netProfit": 0,
+    "winningTrades": 0,
+    "losingTrades": 0,
+    "successRate": 0
+  },
+  "marketConditions": {
+    "averageSurvivability": 0,
+    "averagePanicScore": 0,
+    "averageFlowStrength": 0,
+    "bullishCycles": 0,
+    "bearishCycles": 0
+  },
+  "uniqueTokensCount": 0,
+  "lastUpdated": "2025-08-09T14:18:49.206Z"
+}

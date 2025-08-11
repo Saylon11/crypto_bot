@@ -1,0 +1,223 @@
+{
+  "sessionId": "session_1754806335347",
+  "startTime": "2025-08-10T06:12:15.348Z",
+  "endTime": null,
+  "runtime": "301.1",
+  "cyclesCompleted": 0,
+  "tokensAnalyzed": {},
+  "tokenDetails": [],
+  "trades": [],
+  "mindAnalyses": [
+    {
+      "timestamp": 1754806335953,
+      "survivabilityScore": 100,
+      "action": "HOLD",
+      "suggestedPercentage": 0,
+      "reason": "⏸️ HOLD: Neutral conditions, monitoring closely",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 64,
+      "consumerProfile": {
+        "shrimpPercent": 73.33333333333333,
+        "dolphinPercent": 6.666666666666667,
+        "whalePercent": 20
+      }
+    },
+    {
+      "timestamp": 1754806580815,
+      "survivabilityScore": 100,
+      "action": "BUY",
+      "suggestedPercentage": 75,
+      "reason": "💎 STRONG BUY: 68% confidence + whale accumulation",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0,
+        "dolphinPercent": 12.987012987012985,
+        "whalePercent": 87.01298701298701
+      }
+    },
+    {
+      "timestamp": 1754809162864,
+      "survivabilityScore": 100,
+      "action": "BUY",
+      "suggestedPercentage": 75,
+      "reason": "💎 STRONG BUY: 68% confidence + whale accumulation",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0,
+        "dolphinPercent": 8.94308943089431,
+        "whalePercent": 91.05691056910568
+      }
+    },
+    {
+      "timestamp": 1754812037392,
+      "survivabilityScore": 100,
+      "action": "BUY",
+      "suggestedPercentage": 75,
+      "reason": "💎 STRONG BUY: 68% confidence + whale accumulation",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0.591715976331361,
+        "dolphinPercent": 1.183431952662722,
+        "whalePercent": 98.22485207100591
+      }
+    },
+    {
+      "timestamp": 1754813642959,
+      "survivabilityScore": 100,
+      "action": "BUY",
+      "suggestedPercentage": 75,
+      "reason": "💎 STRONG BUY: 68% confidence + whale accumulation",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0,
+        "dolphinPercent": 6.474820143884892,
+        "whalePercent": 93.5251798561151
+      }
+    },
+    {
+      "timestamp": 1754816449095,
+      "survivabilityScore": 100,
+      "action": "BUY",
+      "suggestedPercentage": 75,
+      "reason": "💎 STRONG BUY: 68% confidence + whale accumulation",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0,
+        "dolphinPercent": 3.8461538461538463,
+        "whalePercent": 96.15384615384616
+      }
+    },
+    {
+      "timestamp": 1754818237460,
+      "survivabilityScore": 100,
+      "action": "BUY",
+      "suggestedPercentage": 75,
+      "reason": "💎 STRONG BUY: 68% confidence + whale accumulation",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0,
+        "dolphinPercent": 8.403361344537815,
+        "whalePercent": 91.59663865546219
+      }
+    },
+    {
+      "timestamp": 1754820333437,
+      "survivabilityScore": 100,
+      "action": "BUY",
+      "suggestedPercentage": 75,
+      "reason": "💎 STRONG BUY: 68% confidence + whale accumulation",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0,
+        "dolphinPercent": 7.6923076923076925,
+        "whalePercent": 92.3076923076923
+      }
+    },
+    {
+      "timestamp": 1754823727543,
+      "survivabilityScore": 100,
+      "action": "BUY",
+      "suggestedPercentage": 75,
+      "reason": "💎 STRONG BUY: 68% confidence + whale accumulation",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0,
+        "dolphinPercent": 3.5398230088495577,
+        "whalePercent": 96.46017699115043
+      }
+    },
+    {
+      "timestamp": 1754823908515,
+      "survivabilityScore": 100,
+      "action": "BUY",
+      "suggestedPercentage": 75,
+      "reason": "💎 STRONG BUY: 68% confidence + whale accumulation",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0,
+        "dolphinPercent": 9.333333333333334,
+        "whalePercent": 90.66666666666666
+      }
+    },
+    {
+      "timestamp": 1754824400410,
+      "survivabilityScore": 100,
+      "action": "BUY",
+      "suggestedPercentage": 75,
+      "reason": "💎 STRONG BUY: 68% confidence + whale accumulation",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 1.6574585635359116,
+        "dolphinPercent": 7.18232044198895,
+        "whalePercent": 91.16022099447514
+      }
+    }
+  ],
+  "actionCounts": {
+    "BUY": 10,
+    "SELL": 0,
+    "HOLD": 1,
+    "PAUSE": 0,
+    "EXIT": 0
+  },
+  "profitMetrics": {
+    "totalSpent": 0,
+    "totalEarned": 0,
+    "netProfit": 0,
+    "winningTrades": 0,
+    "losingTrades": 0,
+    "successRate": 0
+  },
+  "marketConditions": {
+    "averageSurvivability": 0,
+    "averagePanicScore": 0,
+    "averageFlowStrength": 0,
+    "bullishCycles": 0,
+    "bearishCycles": 0
+  },
+  "uniqueTokensCount": 0,
+  "lastUpdated": "2025-08-10T11:13:20.410Z"
+}

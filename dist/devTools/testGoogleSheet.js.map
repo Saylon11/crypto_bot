@@ -1,1 +1,0 @@
-{"version":3,"file":"testGoogleSheet.js","sourceRoot":"","sources":["../../src/devTools/testGoogleSheet.ts"],"names":[],"mappings":";AAAA,kCAAkC;;AAElC,qEAAmE;AAEnE,CAAC,KAAK,IAAI,EAAE;IACV,MAAM,OAAO,GAAG,MAAM,IAAA,0CAAoB,GAAE,CAAC;IAC7C,OAAO,CAAC,GAAG,CAAC,sCAAsC,CAAC,CAAC;IACpD,OAAO,CAAC,KAAK,CAAC,OAAO,CAAC,CAAC;AACzB,CAAC,CAAC,EAAE,CAAC"}

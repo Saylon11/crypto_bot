@@ -1,0 +1,39 @@
+{
+  "sessionId": "session_1754550549544",
+  "startTime": "2025-08-07T07:09:09.544Z",
+  "endTime": "2025-08-07T07:09:29.211Z",
+  "status": "completed",
+  "tokensScanned": 0,
+  "tokensAnalyzed": 0,
+  "uniqueTokens": [],
+  "mindAnalyses": [],
+  "bullScoreDistribution": {},
+  "averageBullScore": 0,
+  "highestBullScore": 0,
+  "lowestBullScore": 100,
+  "tradeOpportunities": 0,
+  "tradesExecuted": 0,
+  "buySignals": 0,
+  "sellSignals": 0,
+  "holdSignals": 0,
+  "pauseSignals": 0,
+  "totalSpent": 0,
+  "totalEarned": 0,
+  "netProfit": 0,
+  "positions": [],
+  "cycleCount": 0,
+  "errorsEncountered": 1,
+  "apiCalls": {
+    "helius": 0,
+    "gecko": 0,
+    "jupiter": 0,
+    "pump": 0
+  },
+  "insights": [],
+  "warnings": [
+    {
+      "timestamp": "2025-08-07T07:09:09.808Z",
+      "message": "Error in main cycle: analyzer is not defined"
+    }
+  ]
+}
