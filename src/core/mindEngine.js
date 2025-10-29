@@ -1,3 +1,6 @@
+const PredictiveModel = require('../ai/local/model');
+const { extractFeatures } = require('../ai/features');
+const { getAdaptiveThreshold } = require('../ai/learning/adaptive');
 // /Users/owner/Desktop/HootBot/src/core/mindEngine.ts
 // M.I.N.D. - The Sovereign Brain That Commands HootBot
 
@@ -23,28 +26,18 @@ import { analyzeMarketFlow } from '../analysis/flowAnalyzer';
 
 // ============= MIND CONFIGURATION =============
 
-interface MINDConfig {
-  // Thresholds for decision making
-  minSurvivabilityToBuy: number;
-  minConfidenceToTrade: number;
-  panicSellThreshold: number;
-  
-  // Profit targets
-  profitTargets: {
-    conservative: { t1: 15, t2: 30, t3: 50 };
-    moderate: { t1: 25, t2: 50, t3: 100 };
-    aggressive: { t1: 50, t2: 100, t3: 200 };
-  };
-  
-  // Risk levels
-  maxRiskScore: number;
-  criticalPanicLevel: number;
-  
-  // Token to analyze (set dynamically)
-  targetToken?: string;
-}
+/**
+ * @typedef {Object} MINDConfig
+ * @property {number} minSurvivabilityToBuy
+ * @property {number} minConfidenceToTrade
+ * @property {number} panicSellThreshold
+ * @property {Object} profitTargets
+ * @property {number} maxRiskScore
+ * @property {number} criticalPanicLevel
+ * @property {string} [targetToken]
+ */
 
-const config: MINDConfig = {
+const config = {
   minSurvivabilityToBuy: 60,
   minConfidenceToTrade: 50,
   panicSellThreshold: 70,
@@ -60,44 +53,30 @@ const config: MINDConfig = {
 
 // ============= CORE ANALYSIS =============
 
-interface MINDAnalysis {
-  // Core scores
-  survivabilityScore: number;
-  confidenceLevel: number;
-  riskScore: number;
-  panicScore: number;
-  
-  // Market dynamics
-  marketFlowStrength: number;
-  volumeTrend: 'increasing' | 'decreasing' | 'stable';
-  liquidityDepth: number;
-  
-  // Behavioral analysis
-  dominantEmotion: 'greed' | 'fear' | 'neutral';
-  herdDirection: 'buying' | 'selling' | 'mixed';
-  whaleActivity: boolean;
-  
-  // Developer analysis
-  devExhausted: boolean;
-  devRemainingPercentage: number;
-  rugPullRisk: number;
-  
-  // Consumer metrics
-  consumerProfile: {
-    shrimpPercent: number;
-    dolphinPercent: number;
-    whalePercent: number;
-  };
-  
-  // Timing
-  peakTradingHours: number[];
-  currentHourActivity: 'high' | 'medium' | 'low';
-}
+/**
+ * @typedef {Object} MINDAnalysis
+ * @property {number} survivabilityScore
+ * @property {number} confidenceLevel
+ * @property {number} riskScore
+ * @property {number} panicScore
+ * @property {number} marketFlowStrength
+ * @property {string} volumeTrend
+ * @property {number} liquidityDepth
+ * @property {string} dominantEmotion
+ * @property {string} herdDirection
+ * @property {boolean} whaleActivity
+ * @property {boolean} devExhausted
+ * @property {number} devRemainingPercentage
+ * @property {number} rugPullRisk
+ * @property {Object} consumerProfile
+ * @property {number[]} peakTradingHours
+ * @property {string} currentHourActivity
+ */
 
 /**
  * Run comprehensive M.I.N.D. analysis
  */
-async function runAnalysis(tokenMint: string): Promise<MINDAnalysis> {
+async function runAnalysis(tokenMint): Promise<MINDAnalysis> {
   console.log(`\n🧠 M.I.N.D. analyzing ${tokenMint.slice(0, 8)}...`);
   
   // Run all analysis modules in parallel
@@ -171,7 +150,7 @@ async function runAnalysis(tokenMint: string): Promise<MINDAnalysis> {
 /**
  * Generate trading directive based on analysis
  */
-function generateDirective(analysis: MINDAnalysis, tokenMint: string): MINDDirective {
+function generateDirective(analysis: MINDAnalysis, tokenMint): MINDDirective {
   // Determine action
   const action = determineAction(analysis);
   
@@ -322,7 +301,7 @@ function determineExecutionProfile(analysis: MINDAnalysis): ExecutionProfile {
   return ExecutionProfile.CONFIDENCE;
 }
 
-function calculatePositionSize(analysis: MINDAnalysis, profile: ExecutionProfile): number {
+function calculatePositionSize(analysis: MINDAnalysis, profile: ExecutionProfile) {
   let baseSize = 25; // Base 25% position
   
   // Adjust based on confidence
@@ -357,7 +336,7 @@ function calculatePositionSize(analysis: MINDAnalysis, profile: ExecutionProfile
   return Math.min(100, Math.max(5, baseSize));
 }
 
-function calculateSellPercentage(analysis: MINDAnalysis): number {
+function calculateSellPercentage(analysis: MINDAnalysis) {
   if (analysis.panicScore > 85) return 100;
   if (analysis.panicScore > 70) return 75;
   if (analysis.dominantEmotion === 'fear' && analysis.herdDirection === 'selling') return 50;
@@ -366,7 +345,7 @@ function calculateSellPercentage(analysis: MINDAnalysis): number {
 
 // ============= UTILITY FUNCTIONS =============
 
-function calculateSurvivability(factors: any): number {
+function calculateSurvivability(factors) {
   const weights = {
     panicScore: -0.3,
     devRisk: -0.2,
@@ -387,13 +366,13 @@ function calculateSurvivability(factors: any): number {
   return Math.max(0, Math.min(100, score));
 }
 
-function calculateConfidence(survivability: number, panicScore: number): number {
+function calculateConfidence(survivability, panicScore) {
   const base = survivability;
   const panicPenalty = panicScore * 0.5;
   return Math.max(0, Math.min(100, base - panicPenalty));
 }
 
-function calculateRiskScore(devRisk: number, panicScore: number, liquidityDepth: number): number {
+function calculateRiskScore(devRisk, panicScore, liquidityDepth) {
   const liquidityBonus = liquidityDepth * 0.2;
   return Math.max(0, Math.min(100, (devRisk + panicScore) / 2 - liquidityBonus));
 }
@@ -425,8 +404,8 @@ function getProfitTargets(profile: ExecutionProfile): MINDDirective['profitTarge
   }
 }
 
-function buildReasoning(analysis: MINDAnalysis, action: DirectiveAction): string {
-  const conditions: string[] = [];
+function buildReasoning(analysis: MINDAnalysis, action: DirectiveAction) {
+  const conditions[] = [];
   
   if (analysis.survivabilityScore > 70) {
     conditions.push('high survivability');
@@ -451,8 +430,8 @@ function buildReasoning(analysis: MINDAnalysis, action: DirectiveAction): string
   return `${action} due to ${conditions.join(', ')}`;
 }
 
-function getMarketConditions(analysis: MINDAnalysis): string[] {
-  const conditions: string[] = [];
+function getMarketConditions(analysis: MINDAnalysis)[] {
+  const conditions[] = [];
   
   if (analysis.volumeTrend !== 'stable') {
     conditions.push(`Volume ${analysis.volumeTrend}`);
@@ -468,8 +447,8 @@ function getMarketConditions(analysis: MINDAnalysis): string[] {
   return conditions;
 }
 
-function getTriggerEvents(analysis: MINDAnalysis): string[] {
-  const events: string[] = [];
+function getTriggerEvents(analysis: MINDAnalysis)[] {
+  const events[] = [];
   
   if (analysis.panicScore > 70) {
     events.push(`High panic score: ${analysis.panicScore}%`);
@@ -486,7 +465,7 @@ function getTriggerEvents(analysis: MINDAnalysis): string[] {
   return events;
 }
 
-function determineHourActivity(hourlyActivity: any): 'high' | 'medium' | 'low' {
+function determineHourActivity(hourlyActivity) | 'low' {
   // Placeholder - implement based on actual hourly data
   return 'medium';
 }
@@ -496,7 +475,7 @@ function determineHourActivity(hourlyActivity: any): 'high' | 'medium' | 'low' {
 /**
  * Main entry point - Run M.I.N.D. and generate directive
  */
-export async function runMindEngine(tokenMint?: string): Promise<MINDDirective> {
+export async function runMindEngine(tokenMint?): Promise<MINDDirective> {
   const targetToken = tokenMint || config.targetToken || '';
   
   if (!targetToken) {
@@ -506,6 +485,12 @@ export async function runMindEngine(tokenMint?: string): Promise<MINDDirective> 
   // Run comprehensive analysis
   const analysis = await runAnalysis(targetToken);
   
+  // AI fusion enhancement
+  const features = extractFeatures(analysis);
+  const aiScore = await PredictiveModel.predict(features);
+  const threshold = getAdaptiveThreshold();
+  const enhancedConfidence = (analysis.confidence * 0.6) + (aiScore * 100 * 0.4); 
+ 
   // Log analysis summary
   console.log(`\n🧠 M.I.N.D. Analysis Complete:`);
   console.log(`   Survivability: ${analysis.survivabilityScore.toFixed(0)}%`);
@@ -515,8 +500,14 @@ export async function runMindEngine(tokenMint?: string): Promise<MINDDirective> 
   console.log(`   Herd Direction: ${analysis.herdDirection}`);
   
   // Generate directive
-  const directive = generateDirective(analysis, targetToken);
-  
+  const directive = generateDirective(analysis, tokenMint);
+  directive.threshold = threshold;
+  directive.enhancedConfidence = enhancedConfidence;
+  directive.threshold = threshold;
+  directive.enhancedConfidence = enhancedConfidence;const directive = generateDirective(analysis, tokenMint); 
+  directive.threshold = threshold;
+  directive.enhancedConfidence = enhancedConfidence;
+
   console.log(`\n📋 M.I.N.D. Directive: ${directive.action}`);
   console.log(`   Execution Profile: ${directive.executionProfile}`);
   console.log(`   Position Size: ${directive.amount.value}%`);
@@ -524,7 +515,10 @@ export async function runMindEngine(tokenMint?: string): Promise<MINDDirective> 
   console.log(`   Reason: ${directive.reasoning.primaryReason}`);
   
   return directive;
+ 
 }
 
 // Export for testing
 export { MINDAnalysis, MINDConfig };
+
+module.exports = { runMindEngine };

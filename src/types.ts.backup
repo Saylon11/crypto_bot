@@ -1,0 +1,167 @@
+// HootBot/src/types.ts
+
+export interface TradeData {
+  tokenMint: string;
+  amount: number;
+  side: 'buy' | 'sell';
+  timestamp: number;
+  signature?: string;
+}
+
+export interface CommandLineArgs {
+  target?: string;
+  amount?: number;
+  mode?: string;
+}
+
+export interface Config {
+  rpcUrl: string;
+  walletSecretKey: string;
+  targetToken?: string;
+  tradeAmount: number;
+  slippage: number;
+}
+
+export interface TokenReport {
+  tokenMint: string;
+  name?: string;
+  symbol?: string;
+  price?: number;
+  volume24h?: number;
+  marketCap?: number;
+  holders?: number;
+  rugProbability?: number;
+  devActivity?: number;
+}
+
+export interface NewToken {
+  mint: string;
+  name?: string;
+  symbol?: string;
+  createdAt: number;
+  creator?: string;
+}
+
+// Updated WalletData to match what mindEngine expects
+export interface WalletData {
+  walletAddress: string;
+  tokenAddress: string;
+  amount: number;
+  timestamp: number;
+  priceChangePercent: number;
+  totalBalance: number;
+  type: 'buy' | 'sell';
+  isBurner?: boolean;
+  note?: string;
+  // Legacy fields for compatibility
+  address?: string;
+  balance?: number;
+}
+
+// Additional types from mindEngine
+export interface DevWallet {
+  address: string;
+  label?: string;
+  percentage?: number;
+  initialBalance: number;
+}
+
+export interface DevExhaustionResult {
+  exhausted: boolean;
+  remainingPercentage: number;
+  devWallets?: DevWallet[];
+}
+
+export interface ConsumerProfile {
+  shrimpPercent: number;
+  dolphinPercent: number;
+  whalePercent: number;
+}
+
+export interface RegionalLiquidityReport {
+  regionActivity: Record<string, number>;
+}
+
+export interface LiquidityHotZones {
+  hourlyActivity: Record<string, number>;
+  peakHours: number[];
+}
+
+export interface MarketFlowReport {
+  inflowStrength: number;
+  netFlow: number;
+  volumeTrend?: 'increasing' | 'decreasing' | 'stable';
+}
+
+export interface HerdSentimentReport {
+  netSentiment: number;
+  buyPressure?: number;
+  sellPressure?: number;
+  dominantEmotion?: 'greed' | 'fear' | 'neutral';
+  smallWalletBuyCount?: number;
+  averageBuyAmount?: number;
+  volatility?: number;
+  activeHours?: string[];
+}
+
+export interface WalletProfileReport {
+  whales: string[];
+  dolphins: string[];
+  shrimps: string[];
+  totalWallets: number;
+  distribution: {
+    whalePercentage: number;
+    dolphinPercentage: number;
+    shrimpPercentage: number;
+  };
+}
+
+export interface DevWalletRiskReport {
+  riskScore: number;
+  flaggedWallets: string[];
+  suspiciousActivity: boolean;
+}
+
+export interface MINDInputs {
+  herdReport: HerdSentimentReport;
+  walletReport: WalletProfileReport;
+  devReport: DevWalletRiskReport;
+  marketFlow: MarketFlowReport;
+  liquidityCycles: LiquidityHotZones;
+  regionalLiquidity: RegionalLiquidityReport;
+  consumerProfile: ConsumerProfile;
+}
+
+export interface MINDReport {
+  // Core metrics
+  survivabilityScore: number;
+  consumerProfile: ConsumerProfile;
+  emotionalHeatmap: string[];
+  regionalFlow: RegionalLiquidityReport;
+  marketFlowStrength: number;
+  
+  // Trade directive
+  tradeSuggestion: {
+    action: "BUY" | "SELL" | "HOLD" | "PAUSE" | "EXIT";
+    percentage: number;
+    reason: string;
+  };
+  
+  // Additional insights
+  panicScore?: number;
+  devExhaustion?: DevExhaustionResult;
+  herdSentiment?: HerdSentimentReport;
+  walletDistribution?: WalletProfileReport;
+  peakTradingHours?: number[];
+  riskLevel?: 'low' | 'medium' | 'high' | 'critical';
+  whaleActivity?: boolean;
+  volumeTrend?: 'increasing' | 'decreasing' | 'stable';
+}
+
+// Panic sell report type
+export interface PanicSellReport {
+  panicScore: number;
+  likelyShrimpExits: number;
+  totalExits: number;
+  comment?: string;
+}

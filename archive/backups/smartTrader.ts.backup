@@ -1,0 +1,181 @@
+// HootBot/src/pumpTools/smartTrader.js - Enhanced with Rapid Risk Detection
+// Working version that bypasses TypeScript compilation issues
+
+const { Connection, PublicKey, LAMPORTS_PER_SOL } = require('@solana/web3.js');
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+// Import functions with error handling - use what's available
+let scanAllTokens, runMindEngine, initiateCoordinatedBuy, initiateCoordinatedSell, getTokenBalance, emergencyExitPosition;
+let RealTimeRiskMonitor, ProfitSniper;
+
+// Try to import compiled modules first, then fallback to source
+try {
+  // Try compiled versions first
+  const tokenScanner = require('../../dist/pumpTools/tokenScanner');
+  scanAllTokens = tokenScanner.scanAllTokens;
+  console.log('✅ Loaded tokenScanner from compiled dist');
+} catch (error) {
+  try {
+    // Fallback to TypeScript source
+    const tokenScanner = require('./tokenScanner');
+    scanAllTokens = tokenScanner.scanAllTokens;
+    console.log('✅ Loaded tokenScanner from TypeScript source');
+  } catch (error2) {
+    console.warn('⚠️ tokenScanner not available - token scanning disabled');
+    scanAllTokens = async () => [];
+  }
+}
+
+try {
+  const mindEngine = require('../../dist/mindEngine');
+  runMindEngine = mindEngine.runMindEngine;
+  console.log('✅ Loaded mindEngine from compiled dist');
+} catch (error) {
+  try {
+    const mindEngine = require('../mindEngine');
+    runMindEngine = mindEngine.runMindEngine;
+    console.log('✅ Loaded mindEngine from TypeScript source');
+  } catch (error2) {
+    console.warn('⚠️ mindEngine not available - using mock');
+    runMindEngine = async () => ({
+      survivabilityScore: 50,
+      tradeSuggestion: { action: 'HOLD', percentage: 0, reason: 'M.I.N.D. not available' },
+      panicScore: 0,
+      riskLevel: 'medium'
+    });
+  }
+}
+
+try {
+  const tradeExecutor = require('../../dist/pumpTools/tradeExecutor');
+  initiateCoordinatedBuy = tradeExecutor.initiateCoordinatedBuy;
+  console.log('✅ Loaded tradeExecutor from compiled dist');
+} catch (error) {
+  try {
+    const tradeExecutor = require('./tradeExecutor');
+    initiateCoordinatedBuy = tradeExecutor.initiateCoordinatedBuy;
+    console.log('✅ Loaded tradeExecutor from TypeScript source');
+  } catch (error2) {
+    console.warn('⚠️ tradeExecutor not available - using mock');
+    initiateCoordinatedBuy = async (amount) => {
+      console.log(`🧪 MOCK BUY: ${amount} SOL`);
+      return true;
+    };
+  }
+}
+
+try {
+  const sellExecutor = require('../../dist/pumpTools/sellExecutor');
+  initiateCoordinatedSell = sellExecutor.initiateCoordinatedSell;
+  getTokenBalance = sellExecutor.getTokenBalance;
+  emergencyExitPosition = sellExecutor.emergencyExitPosition;
+  console.log('✅ Loaded sellExecutor from compiled dist');
+} catch (error) {
+  console.warn('⚠️ sellExecutor not available - using mocks');
+  initiateCoordinatedSell = async (mint, percent) => {
+    console.log(`🧪 MOCK SELL: ${percent}% of ${mint}`);
+    return true;
+  };
+  getTokenBalance = async () => 0;
+  emergencyExitPosition = async (mint) => {
+    console.log(`🧪 MOCK EMERGENCY EXIT: ${mint}`);
+    return true;
+  };
+}
+
+// Try to load enhanced modules
+try {
+  RealTimeRiskMonitor = require('../realTimeRiskMonitor').default;
+  console.log('✅ RealTimeRiskMonitor loaded');
+} catch (error) {
+  console.warn('⚠️ RealTimeRiskMonitor not available - using basic mode');
+  RealTimeRiskMonitor = null;
+}
+
+try {
+  const profitSniperModule = require('../profitSniper');
+  ProfitSniper = profitSniperModule.ProfitSniper;
+  console.log('✅ ProfitSniper loaded');
+} catch (error) {
+  console.warn('⚠️ ProfitSniper not available - using basic mode');
+  ProfitSniper = null;
+}
+
+// Enhanced configuration with rapid monitoring
+const config = {
+  // Scanner settings
+  scanNewTokens: true,
+  scanInterval: 1,  // Scan EVERY cycle for maximum opportunity discovery
+  
+  // Trading settings
+  primaryToken: process.env.DUTCHBROS_TOKEN_MINT || process.env.TEST_TOKEN_ADDRESS,
+  walletAddress: process.env.HOOTBOT_WALLET_ADDRESS || '3BWwMDcyS1tFtGMzZ7kYWzukjuHvkLJJtuKuVMSHsp6D',
+  baseTradeAmount: 0.01,  // Base SOL per trade
+  maxTradeAmount: 0.5,    // Maximum SOL per trade
+  minMindScore: 60,       // Minimum MIND survivability
+  
+  // Timing - ENHANCED FOR RAPID DETECTION
+  cycleDelay: 3 * 60 * 1000,          // 3 minutes for main discovery cycle
+  rapidScanInterval: 10 * 1000,       // 10 seconds for position monitoring
+  devWalletScanInterval: 5 * 1000,    // 5 seconds for dev activity
+  panicDetectionInterval: 15 * 1000,  // 15 seconds for panic detection
+  peakHourMultiplier: 1.5,            // Increase trades during peak hours
+  
+  // Risk management - ENHANCED THRESHOLDS
+  maxNewTokens: 2,           // Max new tokens to try per session
+  maxDailySpend: 5,          // Maximum SOL to spend per day
+  panicSellThreshold: 50,    // Standard panic threshold
+  stopLossPercentage: 25,    // Stop loss at 25% down
+  
+  // CRITICAL: Emergency exit thresholds
+  EMERGENCY_THRESHOLDS: {
+    PANIC_SCORE: 80,         // Emergency exit if panic > 80%
+    MIND_SCORE_DROP: 30,     // Exit if M.I.N.D. drops >30 points
+    SURVIVABILITY_FLOOR: 25, // Emergency exit if survivability < 25%
+    DEV_DUMP_PERCENT: 15,    // Exit if dev sells >15%
+  },
+  
+  // Profit taking - ENHANCED
+  profitTarget1: 25,         // Take 10% profit at 25% gain
+  profitTarget2: 50,         // Take 25% profit at 50% gain
+  profitTarget3: 100,        // Take 50% profit at 100% gain
+  
+  // Modes
+  testMode: true,            // START IN TEST MODE - CHANGE TO false FOR LIVE
+  whaleMode: false,          // Enable whale-sized trades
+  conservativeMode: false,   // Only trade on very strong signals
+  verboseLogging: true,      // Detailed logging
+  
+  // NEW: Rapid monitoring toggle
+  rapidMonitoringEnabled: true,  // Enable 10-second position scans
+};
+
+// Enhanced session tracking
+let cycleCount = 0;
+const tradedTokens = new Map(); // Original tracking for compatibility
+const sessionStats = {
+  totalBuys: 0,
+  totalSells: 0,
+  totalSpent: 0,
+  totalEarned: 0,
+  tokensAnalyzed: 0,
+  tradesExecuted: 0,
+  startTime: Date.now(),
+  dailySpent: 0,
+  lastDayReset: new Date().toDateString(),
+  profitTaken: 0,
+  emergencyExits: 0,
+  rapidScansCompleted: 0
+};
+
+// Initialize enhanced systems safely
+let riskMonitor = null;
+let profitSniper = null;
+
+if (RealTimeRiskMonitor && ProfitSniper) {
+  try {
+    riskMonitor = new RealTimeRiskMonitor();
+    profitSniper = new ProfitSniper();
+    profitSniper.setStrategy('CONSERVATIVE'); // Default strategy

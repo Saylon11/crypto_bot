@@ -1,0 +1,4 @@
+timestamp,type,token,amount,price,mindScore,result
+2025-08-10T21:33:04.422Z,BUY,,0.01,1,100,pending
+2025-08-10T21:33:14.700Z,BUY,,0.01,1,100,pending
+2025-08-10T21:33:25.165Z,BUY,,0.01,1,100,pending

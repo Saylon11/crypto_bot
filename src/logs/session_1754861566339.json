@@ -1,0 +1,87 @@
+{
+  "sessionId": "session_1754861566339",
+  "startTime": "2025-08-10T21:32:46.339Z",
+  "endTime": null,
+  "runtime": "0.6",
+  "cyclesCompleted": 0,
+  "tokensAnalyzed": {},
+  "tokenDetails": [],
+  "trades": [
+    {
+      "timestamp": 1754861584422,
+      "tokenMint": "solana_B2RGHzuhipe52mqooXwrJZ6V33dq3H2RKjvnuW1hVLSn",
+      "tokenSymbol": "UNKNOWN",
+      "type": "BUY",
+      "amount": 0.01,
+      "price": 1,
+      "mindScore": 100,
+      "txSignature": "TEST_MODE",
+      "success": true
+    },
+    {
+      "timestamp": 1754861594700,
+      "tokenMint": "solana_JR3p6S9iLvEhhECKehWA6cA3JFX3Ugdy7SwRQDseqEa",
+      "tokenSymbol": "UNKNOWN",
+      "type": "BUY",
+      "amount": 0.01,
+      "price": 1,
+      "mindScore": 100,
+      "txSignature": "TEST_MODE",
+      "success": true
+    },
+    {
+      "timestamp": 1754861605165,
+      "tokenMint": "solana_2RKZJaD7sSues6YxoujsafcBYjxW6t4h9AVgiRWyDjdw",
+      "tokenSymbol": "UNKNOWN",
+      "type": "BUY",
+      "amount": 0.01,
+      "price": 1,
+      "mindScore": 100,
+      "txSignature": "TEST_MODE",
+      "success": true
+    }
+  ],
+  "mindAnalyses": [
+    {
+      "timestamp": 1754861571515,
+      "survivabilityScore": 100,
+      "action": "BUY",
+      "suggestedPercentage": 75,
+      "reason": "💎 STRONG BUY: 68% confidence + whale accumulation",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 0,
+        "dolphinPercent": 0,
+        "whalePercent": 100
+      }
+    }
+  ],
+  "actionCounts": {
+    "BUY": 1,
+    "SELL": 0,
+    "HOLD": 0,
+    "PAUSE": 0,
+    "EXIT": 0
+  },
+  "profitMetrics": {
+    "totalSpent": 0.03,
+    "totalEarned": 0,
+    "netProfit": 0,
+    "winningTrades": 0,
+    "losingTrades": 0,
+    "successRate": 0
+  },
+  "marketConditions": {
+    "averageSurvivability": 0,
+    "averagePanicScore": 0,
+    "averageFlowStrength": 0,
+    "bullishCycles": 0,
+    "bearishCycles": 0
+  },
+  "uniqueTokensCount": 0,
+  "lastUpdated": "2025-08-10T21:33:25.165Z"
+}

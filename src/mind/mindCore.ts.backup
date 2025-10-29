@@ -1,0 +1,417 @@
+// HootBot/src/mind/mindCore.ts
+import { MINDReport } from '../types/mind';
+import { runMindEngine } from '../mindEngine';
+import { scanForOpportunities, UnifiedToken, getUnifiedScanner } from '../scanners/unifiedScanner';
+import { randomInt } from 'crypto';
+
+/**
+ * M.I.N.D. Directive Schema - The Sacred Contract v1.0
+ * This is the inviolable interface between brain and body
+ */
+export interface MindDirective {
+  version: '1.0';
+  timestamp: number;
+  action: 'BUY' | 'SELL' | 'WAIT' | 'SCAN';
+  tokenAddress: string;
+  tokenSymbol?: string;
+  amount?: number; // In SOL for BUY, in tokens for SELL
+  executionProfile: ExecutionProfile;
+  reason: string;
+  confidence: number; // 0-100
+  priority: 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
+  metadata?: {
+    survivabilityScore?: number;
+    panicScore?: number;
+    marketFlowStrength?: number;
+    whaleActivity?: boolean;
+    devExhaustion?: number;
+    isGraduated?: boolean;
+    marketCap?: number;
+    volume24h?: number;
+  };
+}
+
+export interface ExecutionProfile {
+  personality: 'FOMO' | 'FEAR' | 'GREED' | 'CONSERVATIVE' | 'AGGRESSIVE' | 'NEUTRAL' | 'EXPLORER';
+  urgency: 'IMMEDIATE' | 'NORMAL' | 'PATIENT';
+  stealth: 'LOUD' | 'NORMAL' | 'SILENT';
+  walletPreference?: 'FRESH' | 'ACTIVE' | 'DORMANT' | 'RANDOM';
+}
+
+/**
+ * The Sovereign Brain - M.I.N.D. Core
+ * Scans for gems and analyzes emotional liquidity across Solana
+ */
+export class MindCore {
+  private currentDirective: MindDirective | null = null;
+  private lastScanTime: number = 0;
+  private scanInterval: number;
+  private analysisCache: Map<string, { report: MINDReport; timestamp: number }> = new Map();
+  private scanner = getUnifiedScanner();
+  private cacheExpiry: number = 300000; // 5 minutes
+  private blacklist: Set<string> = new Set();
+  
+  constructor() {
+    // Load scan interval from env or default to 60s
+    this.scanInterval = parseInt(process.env.MIND_SCAN_INTERVAL_MS || '60000');
+    
+    // Add FATBEAR to blacklist - we don't trade our own token
+    const fatbearMint = process.env.PRIMARY_TOKEN_MINT || process.env.FATBEAR_TOKEN_MINT;
+    if (fatbearMint) {
+      this.blacklist.add(fatbearMint);
+      console.log(`🚫 Blacklisted own token: ${fatbearMint.slice(0, 8)}...`);
+    }
+  }
+  
+  /**
+   * Scan for gems and analyze the best opportunity
+   */
+  async scanForOpportunities(): Promise<MindDirective> {
+    const now = Date.now();
+    
+    // Check if we should scan
+    if (now - this.lastScanTime < this.scanInterval) {
+      return this.createWaitDirective('', 'Scan cooldown active');
+    }
+    
+    this.lastScanTime = now;
+    
+    try {
+      console.log('🔍 M.I.N.D. scanning for gems...');
+      
+      // Get potential gems from unified scanner
+      const gems = await scanForOpportunities();
+      
+      // Filter out blacklisted tokens
+      const eligibleGems = gems.filter(gem => !this.blacklist.has(gem.mint));
+      
+      if (eligibleGems.length === 0) {
+        return this.createWaitDirective('', 'No eligible gems found');
+      }
+      
+      console.log(`📊 Found ${eligibleGems.length} potential gems`);
+      
+      // Analyze each gem and find the best opportunity
+      const analyses: Array<{ token: UnifiedToken; analysis: MINDReport }> = [];
+      
+      for (const gem of eligibleGems.slice(0, 10)) { // Analyze top 10
+        // Check cache first
+        const cached = this.analysisCache.get(gem.mint);
+        if (cached && now - cached.timestamp < this.cacheExpiry) {
+          analyses.push({ token: gem, analysis: cached.report });
+          continue;
+        }
+        
+        // Run MIND analysis on this token
+        const analysis = await this.analyzeToken(gem);
+        
+        // Cache the result
+        this.analysisCache.set(gem.mint, { report: analysis, timestamp: now });
+        
+        analyses.push({ token: gem, analysis });
+        
+        // Small delay between analyses
+        await this.sleep(1000);
+      }
+      
+      // Find the best opportunity based on emotional liquidity
+      const bestOpportunity = this.selectBestOpportunity(analyses);
+      
+      if (!bestOpportunity) {
+        return this.createWaitDirective('', 'No suitable opportunities meet criteria');
+      }
+      
+      // Generate directive for the best opportunity
+      return this.generateDirectiveForGem(bestOpportunity.token, bestOpportunity.analysis);
+      
+    } catch (error) {
+      console.error('🧠 Scan error:', error);
+      return this.createWaitDirective('', 'Scan error - waiting for next cycle');
+    }
+  }
+  
+  /**
+   * Analyze a specific token for emotional liquidity
+   */
+  private async analyzeToken(token: UnifiedToken): Promise<MINDReport> {
+    console.log(`🧠 Analyzing ${token.symbol || token.mint.slice(0, 8)}...`);
+    
+    // Run the MIND engine analysis
+    // In practice, this would pass the token data to the analysis
+    const analysis = await runMindEngine();
+    
+    // For now, we'll simulate token-specific analysis
+    // TODO: Update runMindEngine to accept token parameter
+    
+    // Ensure the analysis has all required fields
+    const completeAnalysis: MINDReport = {
+      timestamp: Date.now(),
+      survivabilityScore: analysis.survivabilityScore || 50,
+      marketFlowStrength: analysis.marketFlowStrength || 50,
+      consumerProfile: analysis.consumerProfile || {
+        shrimpPercent: 33,
+        dolphinPercent: 33,
+        whalePercent: 34
+      },
+      emotionalHeatmap: analysis.emotionalHeatmap || [],
+      regionalFlow: analysis.regionalFlow || { regionActivity: {} },
+      tradeSuggestion: analysis.tradeSuggestion || {
+        action: 'HOLD',
+        percentage: 0,
+        reason: 'Analysis incomplete'
+      },
+      ...analysis
+    };
+    
+    return completeAnalysis;
+  }
+  
+  /**
+   * Select the best opportunity based on emotional liquidity indicators
+   */
+  private selectBestOpportunity(
+    analyses: Array<{ token: UnifiedToken; analysis: MINDReport }>
+  ): { token: UnifiedToken; analysis: MINDReport } | null {
+    
+    // Filter for opportunities that meet our criteria
+    const viableOpportunities = analyses.filter(({ analysis }) => {
+      const { survivabilityScore, tradeSuggestion } = analysis;
+      
+      // Must have good survivability
+      if (survivabilityScore < 65) return false;
+      
+      // Must be a BUY signal
+      if (tradeSuggestion.action !== 'BUY') return false;
+      
+      // Must have reasonable confidence
+      if (tradeSuggestion.percentage < 25) return false;
+      
+      return true;
+    });
+    
+    if (viableOpportunities.length === 0) return null;
+    
+    // Sort by emotional liquidity score (combination of factors)
+    viableOpportunities.sort((a, b) => {
+      const scoreA = this.calculateEmotionalLiquidityScore(a.analysis);
+      const scoreB = this.calculateEmotionalLiquidityScore(b.analysis);
+      return scoreB - scoreA;
+    });
+    
+    // Return the best opportunity
+    const best = viableOpportunities[0];
+    
+    console.log(`\n🎯 Best opportunity: ${best.token.symbol || best.token.mint.slice(0, 8)}`);
+    console.log(`   Survivability: ${best.analysis.survivabilityScore}%`);
+    console.log(`   Market Cap: $${(best.token.marketCap / 1000000).toFixed(2)}M`);
+    console.log(`   Graduated: ${best.token.isGraduated ? 'Yes' : 'No'}`);
+    
+    return best;
+  }
+  
+  /**
+   * Calculate emotional liquidity score
+   */
+  private calculateEmotionalLiquidityScore(analysis: MINDReport): number {
+    const {
+      survivabilityScore,
+      marketFlowStrength,
+      tradeSuggestion,
+      whaleActivity,
+      panicScore = 0
+    } = analysis;
+    
+    // Weighted scoring based on emotional indicators
+    let score = 0;
+    
+    // Survivability is most important (40% weight)
+    score += survivabilityScore * 0.4;
+    
+    // Market flow strength (30% weight)
+    score += marketFlowStrength * 0.3;
+    
+    // Confidence in trade (20% weight)
+    score += tradeSuggestion.percentage * 0.2;
+    
+    // Bonus for whale activity (5% weight)
+    if (whaleActivity) score += 5;
+    
+    // Penalty for high panic (5% weight)
+    score -= (panicScore / 100) * 5;
+    
+    return Math.max(0, Math.min(100, score));
+  }
+  
+  /**
+   * Generate a directive for a selected gem
+   */
+  private generateDirectiveForGem(token: UnifiedToken, analysis: MINDReport): MindDirective {
+    const { tradeSuggestion, survivabilityScore, marketFlowStrength } = analysis;
+    
+    // Determine execution profile for gem hunting
+    const executionProfile = this.determineGemExecutionProfile(analysis, token);
+    
+    // Calculate trade amount based on opportunity quality
+    const amount = this.calculateGemTradeAmount(analysis, token);
+    
+    // Determine priority
+    const priority = this.determineGemPriority(analysis, token);
+    
+    return {
+      version: '1.0',
+      timestamp: Date.now(),
+      action: 'BUY', // For now, only buying gems
+      tokenAddress: token.mint,
+      tokenSymbol: token.symbol,
+      amount,
+      executionProfile,
+      reason: `Gem detected: ${tradeSuggestion.reason}`,
+      confidence: tradeSuggestion.percentage,
+      priority,
+      metadata: {
+        survivabilityScore,
+        marketFlowStrength,
+        whaleActivity: analysis.whaleActivity,
+        panicScore: analysis.panicScore,
+        devExhaustion: analysis.devExhaustion?.remainingPercentage,
+        isGraduated: token.isGraduated,
+        marketCap: token.marketCap,
+        volume24h: token.volume24h
+      }
+    };
+  }
+  
+  /**
+   * Determine execution profile for gem hunting
+   */
+  private determineGemExecutionProfile(analysis: MINDReport, token: UnifiedToken): ExecutionProfile {
+    const { survivabilityScore, marketFlowStrength, whaleActivity } = analysis;
+    
+    let personality: ExecutionProfile['personality'];
+    let urgency: ExecutionProfile['urgency'];
+    let stealth: ExecutionProfile['stealth'];
+    let walletPreference: ExecutionProfile['walletPreference'];
+    
+    // For new gems, we want to be exploratory but cautious
+    if (!token.isGraduated && token.marketCap < 100000) {
+      // Early stage gem
+      personality = 'EXPLORER';
+      urgency = 'PATIENT';
+      stealth = 'SILENT';
+      walletPreference = 'FRESH';
+    } else if (whaleActivity && marketFlowStrength > 70) {
+      // Following smart money
+      personality = 'FOMO';
+      urgency = 'IMMEDIATE';
+      stealth = 'NORMAL';
+      walletPreference = 'ACTIVE';
+    } else if (survivabilityScore > 80) {
+      // High conviction play
+      personality = 'AGGRESSIVE';
+      urgency = 'NORMAL';
+      stealth = 'NORMAL';
+      walletPreference = 'RANDOM';
+    } else {
+      // Default cautious approach
+      personality = 'CONSERVATIVE';
+      urgency = 'PATIENT';
+      stealth = 'SILENT';
+      walletPreference = 'DORMANT';
+    }
+    
+    return { personality, urgency, stealth, walletPreference };
+  }
+  
+  /**
+   * Calculate trade amount for gem
+   */
+  private calculateGemTradeAmount(analysis: MINDReport, token: UnifiedToken): number {
+    const minSize = parseFloat(process.env.MIN_TRADE_SIZE_SOL || '0.05');
+    const maxSize = parseFloat(process.env.MAX_TRADE_SIZE_SOL || '0.5');
+    
+    const { tradeSuggestion, survivabilityScore } = analysis;
+    
+    let amount = minSize;
+    
+    // Scale by market cap (smaller = smaller trades)
+    if (token.marketCap < 50000) {
+      amount = minSize; // Minimum for micro caps
+    } else if (token.marketCap < 500000) {
+      amount = minSize * 2; // Small caps
+    } else {
+      amount = minSize * 3; // Larger caps
+    }
+    
+    // Scale by confidence
+    amount *= (tradeSuggestion.percentage / 100);
+    
+    // Boost for high survivability
+    if (survivabilityScore > 85) {
+      amount *= 1.5;
+    }
+    
+    // Cap at limits
+    return Math.min(Math.max(amount, minSize), maxSize);
+  }
+  
+  /**
+   * Determine priority for gem directive
+   */
+  private determineGemPriority(analysis: MINDReport, token: UnifiedToken): MindDirective['priority'] {
+    const { survivabilityScore, tradeSuggestion } = analysis;
+    
+    // Ultra high conviction + early stage
+    if (survivabilityScore > 90 && !token.isGraduated) {
+      return 'HIGH';
+    }
+    
+    // Good opportunity
+    if (survivabilityScore > 75 && tradeSuggestion.percentage > 50) {
+      return 'MEDIUM';
+    }
+    
+    return 'LOW';
+  }
+  
+  /**
+   * Create a WAIT directive
+   */
+  private createWaitDirective(tokenAddress: string, reason: string): MindDirective {
+    return {
+      version: '1.0',
+      timestamp: Date.now(),
+      action: 'WAIT',
+      tokenAddress,
+      executionProfile: {
+        personality: 'NEUTRAL',
+        urgency: 'PATIENT',
+        stealth: 'SILENT'
+      },
+      reason,
+      confidence: 0,
+      priority: 'LOW'
+    };
+  }
+  
+  /**
+   * Add token to blacklist
+   */
+  addToBlacklist(tokenAddress: string): void {
+    this.blacklist.add(tokenAddress);
+    console.log(`🚫 Added to blacklist: ${tokenAddress.slice(0, 8)}...`);
+  }
+  
+  /**
+   * Get current directive
+   */
+  getCurrentDirective(): MindDirective | null {
+    return this.currentDirective;
+  }
+  
+  /**
+   * Sleep utility
+   */
+  private sleep(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+}

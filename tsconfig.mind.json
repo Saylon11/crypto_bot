@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/mind/**/*",
+    "src/executor/**/*",
+    "src/scanners/**/*",
+    "src/types/mind.ts",
+    "src/orchestrator.ts",
+    "src/launch.ts",
+    "src/pumpTools/tradeExecutor.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

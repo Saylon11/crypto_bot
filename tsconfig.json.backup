@@ -16,5 +16,15 @@
     "allowSyntheticDefaultImports": true,
     "types": ["node"]
   },
-  "exclude": ["node_modules", "dist", "expo-solana-wallet"]
+  "include": [
+    "src/**/*",
+    "tests/**/*"
+  ],
+ "exclude": [
+    "node_modules",
+    "dist",
+    "expo-solana-wallet",
+    "pumpScanner.ts",
+    "tokenHunter.ts"
+  ]
 }

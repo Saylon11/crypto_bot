@@ -1,0 +1,310 @@
+// HootBot/src/mindEngine.js
+// M.I.N.D. Engine - Market Intelligence Neural Decision Engine
+const dotenv = require('dotenv');
+dotenv.config();
+
+// Load modules with proper error handling
+let analyzeSurvivability, analyzeConsumerProfile, analyzeMarketFlow, analyzeHerdSentiment;
+let detectPanicSells, detectDevExhaustion, mapLiquidityCycle, trackDevWallet, profileWallets;
+
+// Try to load compiled modules, with fallbacks
+try {
+  ({ analyzeSurvivability } = require('./modules/survivabilityScore'));
+} catch (e) {
+  console.log('Module ./modules/survivabilityScore not available, using fallback');
+  analyzeSurvivability = (data) => Math.floor(Math.random() * 30) + 50;
+}
+
+try {
+  ({ analyzeConsumerProfile } = require('./modules/consumerProfileAnalyzer'));
+} catch (e) {
+  console.log('Module ./modules/consumerProfileAnalyzer not available, using fallback');
+  analyzeConsumerProfile = () => ({
+    profile: 'mixed',
+    shrimpCount: 100,
+    dolphinCount: 20,
+    whaleCount: 5,
+    shrimpPercent: 80,
+    dolphinPercent: 15,
+    whalePercent: 5
+  });
+}
+
+try {
+  ({ analyzeMarketFlow } = require('./modules/marketFlowAnalyzer'));
+} catch (e) {
+  console.log('Module ./modules/marketFlowAnalyzer not available, using fallback');
+  analyzeMarketFlow = () => ({
+    strength: Math.floor(Math.random() * 30) + 60,
+    volumeTrend: 'stable',
+    momentum: 'neutral'
+  });
+}
+
+try {
+  ({ analyzeHerdSentiment } = require('./modules/herdSentimentAnalyzer'));
+} catch (e) {
+  console.log('Module ./modules/herdSentimentAnalyzer not available, using fallback');
+  analyzeHerdSentiment = () => ({
+    sentiment: 'neutral',
+    score: 50,
+    regionalFlow: { regionActivity: { 'global': 1.0 } },
+    emotionalHeatmap: [14, 15, 16, 17]
+  });
+}
+
+try {
+  ({ detectPanicSells } = require('./modules/panicSellDetector'));
+} catch (e) {
+  console.log('Module ./modules/panicSellDetector not available, using fallback');
+  detectPanicSells = () => ({
+    isPanic: false,
+    panicScore: Math.floor(Math.random() * 30) + 10,
+    confidence: 0.7,
+    comment: 'Market appears stable'
+  });
+}
+
+try {
+  ({ detectDevExhaustion } = require('./modules/devExhaustionDetector'));
+} catch (e) {
+  console.log('Module ./modules/devExhaustionDetector not available, using fallback');
+  detectDevExhaustion = () => ({
+    exhausted: false,
+    remainingPercentage: Math.floor(Math.random() * 30) + 70,
+    devActivity: 'normal'
+  });
+}
+
+try {
+  ({ mapLiquidityCycle } = require('./modules/liquidityCycleMapper'));
+} catch (e) {
+  console.log('Module ./modules/liquidityCycleMapper not available, using fallback');
+  mapLiquidityCycle = () => ({
+    phase: 'accumulation',
+    strength: 0.7,
+    nextPhase: 'growth',
+    confidence: 0.8,
+    peakHours: [14, 15, 16, 17]
+  });
+}
+
+try {
+  ({ trackDevWallet } = require('./modules/devWalletTracker'));
+} catch (e) {
+  console.log('Module ./modules/devWalletTracker not available, using fallback');
+  trackDevWallet = () => ({
+    found: true,
+    balance: 5,
+    percentOfSupply: 2.5,
+    recentActivity: false
+  });
+}
+
+try {
+  ({ profileWallets } = require('./modules/walletProfiler'));
+} catch (e) {
+  console.log('Module ./modules/walletProfiler not available, using fallback');
+  profileWallets = () => ({
+    whales: [],
+    dolphins: [],
+    shrimps: [],
+    totalWallets: 0,
+    distribution: {
+      shrimpPercentage: 0,
+      dolphinPercentage: 0,
+      whalePercentage: 0
+    }
+  });
+}
+
+// Helper to determine risk level
+function calculateRiskLevel(survivability, panicScore, devExhaustion) {
+  if (survivability < 30 || panicScore > 70 || devExhaustion < 20) return 'critical';
+  if (survivability < 50 || panicScore > 50 || devExhaustion < 40) return 'high';
+  if (survivability < 70 || panicScore > 30) return 'medium';
+  return 'low';
+}
+
+// Helper to determine action
+function determineAction(survivability, panicScore, riskLevel, devActivity) {
+  if (riskLevel === 'critical' || panicScore > 80) return 'EXIT';
+  if (survivability >= 80 && riskLevel === 'low') return 'BUY';
+  if (survivability >= 65 && riskLevel !== 'high') return 'BUY';
+  if (survivability < 40 || riskLevel === 'high') return 'SELL';
+  return 'HOLD';
+}
+
+// Main MIND Engine function
+async function runMindEngine() {
+  console.log('\n🧠 === HootBot MIND Engine 1.0 ===');
+  
+  const tokenAddress = process.env.TEST_TOKEN_ADDRESS || 
+                      process.env.DUTCHBROS_TOKEN_MINT || 
+                      process.env.HELIUS_TARGET_WALLET;
+  
+  console.log(`📊 Analyzing token: ${tokenAddress ? tokenAddress.slice(0, 6) + '...' + tokenAddress.slice(-4) : 'No token set'}`);
+  
+  try {
+    // Get token data from scanner (if available)
+    const tokenData = global.currentTokenData || {
+      volume: 10000,
+      liquidity: 5000,
+      ageHours: 2,
+      priceChange24h: 10,
+      marketCap: 100000
+    };
+    
+    // Run all analysis modules
+    console.log('Analyzing survivability...');
+    const survivabilityScore = await analyzeSurvivability(tokenData);
+    
+    console.log('Analyzing consumer profile...');
+    const consumerProfile = await analyzeConsumerProfile();
+    
+    console.log('Analyzing market flow...');
+    let walletReport;
+    try {
+      const walletData = await profileWallets([]);
+      // Fix: Extract arrays from the wallet profiler result
+      walletReport = {
+        whales: walletData.whales || [],
+        dolphins: walletData.dolphins || [],
+        shrimps: walletData.shrimps || [],
+        totalWallets: walletData.totalWallets || 0,
+        distribution: walletData.distribution || {
+          shrimpPercentage: 0,
+          dolphinPercentage: 0,
+          whalePercentage: 0
+        }
+      };
+    } catch (error) {
+      console.log('Wallet profiling error, using defaults');
+      walletReport = {
+        whales: [],
+        dolphins: [],
+        shrimps: [],
+        totalWallets: 0,
+        distribution: {
+          shrimpPercentage: 0,
+          dolphinPercentage: 0,
+          whalePercentage: 0
+        }
+      };
+    }
+    
+    const marketFlow = await analyzeMarketFlow();
+    
+    console.log('Analyzing herd sentiment...');
+    const herdSentiment = await analyzeHerdSentiment();
+    
+    console.log('Detecting panic sells...');
+    const panicReport = await detectPanicSells();
+    
+    console.log('Checking dev exhaustion...');
+    const devExhaustion = await detectDevExhaustion();
+    
+    console.log('Mapping liquidity cycles...');
+    const liquidityCycle = await mapLiquidityCycle();
+    
+    console.log('Tracking dev wallet...');
+    const devWallet = await trackDevWallet();
+    
+    // Calculate risk and determine action
+    const riskLevel = calculateRiskLevel(
+      survivabilityScore,
+      panicReport.panicScore,
+      devExhaustion.remainingPercentage
+    );
+    
+    const action = determineAction(
+      survivabilityScore,
+      panicReport.panicScore,
+      riskLevel,
+      devWallet.recentActivity
+    );
+    
+    // Determine trade percentage based on confidence
+    let percentage = 25; // Base percentage
+    if (survivabilityScore >= 80 && riskLevel === 'low') percentage = 50;
+    if (survivabilityScore >= 90) percentage = 75;
+    if (panicReport.panicScore > 50) percentage = Math.max(10, percentage - 20);
+    
+    // Build comprehensive report
+    const mindReport = {
+      timestamp: Date.now(),
+      tokenAddress: tokenAddress,
+      survivabilityScore: survivabilityScore,
+      tradeSuggestion: {
+        action: action,
+        percentage: percentage,
+        reason: `${action} based on ${survivabilityScore}% survivability and ${riskLevel} risk`
+      },
+      riskLevel: riskLevel,
+      panicScore: panicReport.panicScore,
+      marketFlowStrength: marketFlow.strength,
+      volumeTrend: marketFlow.volumeTrend,
+      whaleActivity: walletReport.whales.length > 0,
+      devExhaustion: devExhaustion,
+      liquidityPhase: liquidityCycle.phase,
+      consumerProfile: {
+        shrimpPercent: walletReport.distribution.shrimpPercentage || consumerProfile.shrimpPercent,
+        dolphinPercent: walletReport.distribution.dolphinPercentage || consumerProfile.dolphinPercent,
+        whalePercent: walletReport.distribution.whalePercentage || consumerProfile.whalePercent
+      },
+      regionalFlow: herdSentiment.regionalFlow,
+      emotionalHeatmap: herdSentiment.emotionalHeatmap || liquidityCycle.peakHours,
+      peakTradingHours: liquidityCycle.peakHours || [14, 15, 16, 17]
+    };
+    
+    // Display summary
+    console.log('\n📊 === MIND Analysis Complete ===');
+    console.log(`🎯 Survivability: ${survivabilityScore}%`);
+    console.log(`📈 Action: ${action} (${percentage}%)`);
+    console.log(`⚠️ Risk Level: ${riskLevel.toUpperCase()}`);
+    console.log(`💫 Reason: ${mindReport.tradeSuggestion.reason}`);
+    
+    return mindReport;
+    
+  } catch (error) {
+    console.error('❌ MIND Engine error:', error.message);
+    
+    // Return safe defaults on error
+    return {
+      timestamp: Date.now(),
+      tokenAddress: tokenAddress,
+      survivabilityScore: 50,
+      tradeSuggestion: {
+        action: 'HOLD',
+        percentage: 25,
+        reason: 'Analyzing market conditions'
+      },
+      riskLevel: 'unknown',
+      panicScore: 0,
+      marketFlowStrength: 50,
+      volumeTrend: 'unknown',
+      whaleActivity: false,
+      devExhaustion: { exhausted: false, remainingPercentage: 100 },
+      liquidityPhase: 'unknown',
+      consumerProfile: {
+        shrimpPercent: 0,
+        dolphinPercent: 0,
+        whalePercent: 0
+      },
+      regionalFlow: { regionActivity: {} },
+      emotionalHeatmap: [],
+      peakTradingHours: []
+    };
+  }
+}
+
+// Helper to inject token data from scanner
+function setCurrentTokenData(tokenData) {
+  global.currentTokenData = tokenData;
+}
+
+// Export
+module.exports = {
+  runMindEngine,
+  setCurrentTokenData
+};

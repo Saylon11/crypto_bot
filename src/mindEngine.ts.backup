@@ -1,0 +1,411 @@
+// HootBot/src/mindEngine.ts - Enhanced M.I.N.D. Engine with Vibe Score Integration
+
+import dotenv from "dotenv";
+dotenv.config();
+
+import { fetchBehaviorFromHelius, WalletData } from "./utils/apiClient";
+import { decodeHootBotKeypair } from "./utils/phantomUtils";
+
+// =============================================
+// 🎯 VIBE SCORE FRAMEWORK - Core Types
+// =============================================
+
+export interface VibeSignal {
+  name: string;
+  value: number;
+  weight: number;
+  confidence: number;
+  timestamp: number;
+}
+
+export interface HeatZone {
+  id: string;
+  intensity: number; // 0-100 (Vibe Score)
+  walletCount: number;
+  transactionVelocity: number;
+  averageTradeSize: number;
+  momentumScore: number;
+  actorComposition: {
+    organicPercent: number;
+    whalePercent: number;
+    botPercent: number;
+  };
+}
+
+export interface MINDReport {
+  // Core Vibe Score (0-100)
+  vibeScore: number;
+  vibeState: "COLD" | "WARM" | "HOT" | "INFERNO";
+  confidence: number;
+  
+  // Enhanced Intelligence
+  heatZones: HeatZone[];
+  opportunityGradient: number; // 0-100 (not binary!)
+  momentumScore: number;
+  
+  // Action Intelligence
+  tradeSuggestion: {
+    action: "BUY" | "SELL" | "HOLD" | "EXIT";
+    urgency: "LOW" | "MEDIUM" | "HIGH" | "CRITICAL";
+    tradeSize: number; // SOL amount
+    reason: string;
+  };
+  
+  // Risk Assessment
+  riskLevel: 'low' | 'medium' | 'high' | 'critical';
+  actorBreakdown: {
+    organic: number;
+    whales: number;
+    bots: number;
+    sybils: number;
+  };
+}
+
+// =============================================
+// 🔥 SIMPLIFIED VIBE SCORE CALCULATION
+// =============================================
+
+/**
+ * Calculate Vibe Score using the simplified composite index approach
+ * Following the M.I.N.D. framework but maintaining simplicity
+ */
+function calculateVibeScore(signals: VibeSignal[]): number {
+  if (signals.length === 0) return 0;
+  
+  // Geometric aggregation for non-compensatory scoring
+  // A low score in any critical indicator penalizes overall Vibe
+  let weightedProduct = 1;
+  let totalWeight = 0;
+  
+  signals.forEach(signal => {
+    if (signal.value > 0) {
+      // Normalize to 0-1 range and apply weight
+      const normalizedValue = Math.min(signal.value / 100, 1);
+      const weightedValue = Math.pow(normalizedValue, signal.weight);
+      weightedProduct *= weightedValue;
+      totalWeight += signal.weight;
+    }
+  });
+  
+  // Convert back to 0-100 scale
+  const vibeScore = Math.pow(weightedProduct, 1 / Math.max(totalWeight, 1)) * 100;
+  return Math.round(vibeScore);
+}
+
+/**
+ * Detect heat zones based on wallet activity clustering
+ * Simplified version of the DBSCAN approach from the framework
+ */
+function detectHeatZones(walletData: WalletData[]): HeatZone[] {
+  const zones: HeatZone[] = [];
+  
+  // Group activity by time windows (15-minute intervals)
+  const timeWindows = new Map<number, WalletData[]>();
+  const now = Date.now();
+  
+  walletData.forEach(data => {
+    const timeSlot = Math.floor(data.timestamp / (15 * 60 * 1000)) * (15 * 60 * 1000);
+    if (!timeWindows.has(timeSlot)) {
+      timeWindows.set(timeSlot, []);
+    }
+    timeWindows.get(timeSlot)!.push(data);
+  });
+  
+  // Analyze each time window for heat
+  timeWindows.forEach((windowData, timeSlot) => {
+    if (windowData.length >= 3) { // Minimum activity threshold
+      const intensity = Math.min((windowData.length / 10) * 100, 100);
+      const velocity = windowData.length / 15; // transactions per minute
+      
+      // Calculate actor composition
+      const uniqueWallets = new Set(windowData.map(d => d.walletAddress)).size;
+      const avgTradeSize = windowData.reduce((sum, d) => sum + d.amount, 0) / windowData.length;
+      
+      zones.push({
+        id: `zone_${timeSlot}`,
+        intensity,
+        walletCount: uniqueWallets,
+        transactionVelocity: velocity,
+        averageTradeSize: avgTradeSize,
+        momentumScore: intensity * 0.8, // Simple momentum calculation
+        actorComposition: {
+          organicPercent: 70, // Simplified - would use bot detection in production
+          whalePercent: 20,
+          botPercent: 10
+        }
+      });
+    }
+  });
+  
+  return zones.sort((a, b) => b.intensity - a.intensity);
+}
+
+/**
+ * Simplified panic detection based on transaction patterns
+ */
+function detectPanicSelling(walletData: WalletData[]): { panicScore: number; comment: string } {
+  if (walletData.length === 0) {
+    return { panicScore: 0, comment: "No data available" };
+  }
+  
+  const sellTransactions = walletData.filter(d => d.type === 'sell');
+  const recentSells = sellTransactions.filter(d => d.timestamp > Date.now() - (60 * 60 * 1000)); // Last hour
+  
+  const sellRatio = recentSells.length / Math.max(walletData.length, 1);
+  const panicScore = Math.min(sellRatio * 100, 100);
+  
+  let comment = "Normal selling activity";
+  if (panicScore > 70) comment = "Heavy selling pressure detected";
+  else if (panicScore > 40) comment = "Moderate selling activity";
+  
+  return { panicScore: Math.round(panicScore), comment };
+}
+
+/**
+ * Enhanced M.I.N.D. Engine with Vibe Score Integration
+ * Fixes the undefined wallet bug and implements heat zone detection
+ */
+export async function runEnhancedMindEngine(tokenAddress?: string): Promise<MINDReport> {
+  console.log("🧠 Enhanced M.I.N.D. Engine v2.0 Starting...");
+  
+  // 🔧 FIX: Use actual wallet address instead of token mint
+  const targetWallet = process.env.HOOTBOT_WALLET_ADDRESS || 
+                      decodeHootBotKeypair().publicKey.toBase58();
+  
+  console.log(`🎯 Analyzing wallet: ${targetWallet}`);
+  
+  try {
+    // Fetch behavioral data from the correct wallet address
+    const walletData = await fetchBehaviorFromHelius(targetWallet);
+    
+    if (!walletData.length) {
+      console.warn("⚠️ No behavioral data found - returning conservative assessment");
+      return createConservativeReport();
+    }
+    
+    console.log(`📊 Processing ${walletData.length} behavioral data points`);
+    
+    // 🔥 DETECT HEAT ZONES
+    const heatZones = detectHeatZones(walletData);
+    console.log(`🌡️ Detected ${heatZones.length} heat zones`);
+    
+    // 🎯 CALCULATE VIBE SIGNALS
+    const vibeSignals: VibeSignal[] = [
+      {
+        name: "Transaction Velocity",
+        value: Math.min((walletData.length / 24) * 100, 100), // Transactions per hour
+        weight: 0.25,
+        confidence: 0.8,
+        timestamp: Date.now()
+      },
+      {
+        name: "Heat Zone Intensity",
+        value: heatZones.length > 0 ? heatZones[0].intensity : 0,
+        weight: 0.30,
+        confidence: 0.9,
+        timestamp: Date.now()
+      },
+      {
+        name: "Wallet Diversity",
+        value: Math.min((new Set(walletData.map(d => d.walletAddress)).size / 10) * 100, 100),
+        weight: 0.20,
+        confidence: 0.7,
+        timestamp: Date.now()
+      },
+      {
+        name: "Momentum Score",
+        value: calculateMomentumScore(walletData),
+        weight: 0.25,
+        confidence: 0.85,
+        timestamp: Date.now()
+      }
+    ];
+    
+    // 🧮 CALCULATE FINAL VIBE SCORE
+    const vibeScore = calculateVibeScore(vibeSignals);
+    const vibeState = getVibeState(vibeScore);
+    const confidence = calculateConfidence(vibeSignals);
+    
+    // 🎪 GENERATE TRADING INTELLIGENCE
+    const tradeSuggestion = generateTradeSuggestion(vibeScore, heatZones);
+    const opportunityGradient = calculateOpportunityGradient(vibeScore, heatZones);
+    
+    // 📉 DETECT PANIC SELLING
+    const panicReport = detectPanicSelling(walletData);
+    
+    console.log(`\n🎯 === M.I.N.D. ANALYSIS COMPLETE ===`);
+    console.log(`💫 Vibe Score: ${vibeScore}/100 (${vibeState})`);
+    console.log(`🎪 Confidence: ${Math.round(confidence * 100)}%`);
+    console.log(`🎯 Action: ${tradeSuggestion.action} (${tradeSuggestion.urgency})`);
+    console.log(`🌡️ Heat Zones: ${heatZones.length} detected`);
+    console.log(`📈 Opportunity Gradient: ${opportunityGradient}/100`);
+    console.log(`📉 Panic Score: ${panicReport.panicScore}%`);
+    console.log(`==========================================\n`);
+    
+    return {
+      vibeScore,
+      vibeState,
+      confidence,
+      heatZones,
+      opportunityGradient,
+      momentumScore: vibeSignals.find(s => s.name === "Momentum Score")?.value || 0,
+      tradeSuggestion,
+      riskLevel: calculateRiskLevel(vibeScore, confidence),
+      actorBreakdown: {
+        organic: 70,
+        whales: 20,
+        bots: 8,
+        sybils: 2
+      }
+    };
+    
+  } catch (error) {
+    console.error("🚨 M.I.N.D. Engine Error:", error);
+    return createConservativeReport();
+  }
+}
+
+// =============================================
+// 🛠️ HELPER FUNCTIONS
+// =============================================
+
+function calculateMomentumScore(walletData: WalletData[]): number {
+  if (walletData.length < 2) return 0;
+  
+  // Calculate velocity over time
+  const recentData = walletData.filter(d => d.timestamp > Date.now() - (60 * 60 * 1000)); // Last hour
+  const olderData = walletData.filter(d => d.timestamp <= Date.now() - (60 * 60 * 1000));
+  
+  const recentVelocity = recentData.length;
+  const historicalVelocity = olderData.length / Math.max(1, olderData.length / 24); // Normalize to hourly
+  
+  const momentum = recentVelocity > historicalVelocity ? 
+    Math.min((recentVelocity / historicalVelocity) * 50, 100) : 
+    Math.max(50 - ((historicalVelocity - recentVelocity) / historicalVelocity) * 50, 0);
+    
+  return Math.round(momentum);
+}
+
+function getVibeState(vibeScore: number): "COLD" | "WARM" | "HOT" | "INFERNO" {
+  if (vibeScore >= 80) return "INFERNO";
+  if (vibeScore >= 60) return "HOT";
+  if (vibeScore >= 40) return "WARM";
+  return "COLD";
+}
+
+function calculateConfidence(signals: VibeSignal[]): number {
+  if (signals.length === 0) return 0;
+  const avgConfidence = signals.reduce((sum, s) => sum + s.confidence, 0) / signals.length;
+  return avgConfidence;
+}
+
+function generateTradeSuggestion(vibeScore: number, heatZones: HeatZone[]): any {
+  const hasActiveHeat = heatZones.some(z => z.intensity > 60);
+  
+  if (vibeScore >= 70 && hasActiveHeat) {
+    return {
+      action: "BUY" as const,
+      urgency: "HIGH" as const,
+      tradeSize: 0.1, // Start with 0.1 SOL instead of 0.01
+      reason: "Strong vibe score with active heat zones detected"
+    };
+  }
+  
+  if (vibeScore >= 50) {
+    return {
+      action: "BUY" as const,
+      urgency: "MEDIUM" as const,
+      tradeSize: 0.05,
+      reason: "Moderate vibe score suggests opportunity"
+    };
+  }
+  
+  if (vibeScore <= 30) {
+    return {
+      action: "HOLD" as const,
+      urgency: "LOW" as const,
+      tradeSize: 0,
+      reason: "Low vibe score - waiting for better conditions"
+    };
+  }
+  
+  return {
+    action: "HOLD" as const,
+    urgency: "MEDIUM" as const,
+    tradeSize: 0,
+    reason: "Neutral conditions - monitoring for opportunities"
+  };
+}
+
+function calculateOpportunityGradient(vibeScore: number, heatZones: HeatZone[]): number {
+  // Implement opportunity gradient (0-100) instead of binary pass/fail
+  let gradient = vibeScore * 0.6; // Base from vibe score
+  
+  // Add heat zone bonus
+  const maxHeatIntensity = heatZones.length > 0 ? Math.max(...heatZones.map(z => z.intensity)) : 0;
+  gradient += maxHeatIntensity * 0.3;
+  
+  // Add momentum bonus
+  const recentHeatZones = heatZones.filter(z => z.transactionVelocity > 1);
+  gradient += (recentHeatZones.length / Math.max(heatZones.length, 1)) * 10;
+  
+  return Math.min(Math.round(gradient), 100);
+}
+
+function calculateRiskLevel(vibeScore: number, confidence: number): 'low' | 'medium' | 'high' | 'critical' {
+  const riskScore = (100 - vibeScore) + ((1 - confidence) * 50);
+  
+  if (riskScore < 25) return 'low';
+  if (riskScore < 50) return 'medium';
+  if (riskScore < 75) return 'high';
+  return 'critical';
+}
+
+function createConservativeReport(): MINDReport {
+  return {
+    vibeScore: 30,
+    vibeState: "COLD",
+    confidence: 0.5,
+    heatZones: [],
+    opportunityGradient: 25,
+    momentumScore: 20,
+    tradeSuggestion: {
+      action: "HOLD",
+      urgency: "LOW",
+      tradeSize: 0,
+      reason: "Insufficient data - conservative approach"
+    },
+    riskLevel: 'medium',
+    actorBreakdown: {
+      organic: 80,
+      whales: 15,
+      bots: 3,
+      sybils: 2
+    }
+  };
+}
+
+// Legacy export for backward compatibility
+export async function runMindEngine(): Promise<MINDReport> {
+  return runEnhancedMindEngine();
+}
+
+// Execute the enhanced MIND engine when this file is run directly
+if (require.main === module) {
+  console.log("🚀 Starting Enhanced M.I.N.D. Engine v2.0...");
+  
+  runEnhancedMindEngine()
+    .then(report => {
+      console.log("\n✅ Enhanced M.I.N.D. Analysis Complete!");
+      console.log(`🎯 Final Vibe Score: ${report.vibeScore}/100 (${report.vibeState})`);
+      console.log(`🎪 Recommendation: ${report.tradeSuggestion.action} ${report.tradeSuggestion.tradeSize} SOL`);
+      console.log(`🌡️ Opportunity Gradient: ${report.opportunityGradient}/100`);
+      console.log(`⚡ Risk Level: ${report.riskLevel.toUpperCase()}`);
+      process.exit(0);
+    })
+    .catch(error => {
+      console.error("\n❌ Enhanced M.I.N.D. Engine Error:", error);
+      console.error("Stack trace:", error.stack);
+      process.exit(1);
+    });
+}

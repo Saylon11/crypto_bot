@@ -1,0 +1,330 @@
+#!/bin/bash
+# Create and install the enhanced scanner
+
+cd ~/Desktop/HootBot
+
+echo "📦 Creating enhanced token scanner..."
+
+# Create the enhanced scanner file
+cat > src/pumpTools/tokenScanner.js << 'EOF'
+// tokenScanner.js - HootBot Enhanced Scanner with Raydium + DexScreener
+const axios = require('axios');
+const { Connection, PublicKey } = require('@solana/web3.js');
+
+// Configuration
+const SCANNER_CONFIG = {
+  MIN_LIQUIDITY_USD: 5000,       // Lowered for better discovery
+  MIN_VOLUME_24H: 2000,          // Lowered for new tokens
+  MAX_TOKEN_AGE: 24 * 60 * 60 * 1000, // 24 hours
+  MIN_HOLDERS: 25,               // More realistic
+  BIRDEYE_API: 'https://public-api.birdeye.so',
+  DEXSCREENER_API: 'https://api.dexscreener.com/latest/dex'
+};
+
+// Simplified liquidity analysis
+function analyzeLiquidity(volume, liquidity) {
+  const ratio = volume / liquidity;
+  let score = 50;
+  
+  if (liquidity > 100000) score += 30;
+  else if (liquidity > 50000) score += 20;
+  else if (liquidity > 20000) score += 10;
+  
+  if (ratio > 0.5 && ratio < 3) score += 20; // Healthy ratio
+  
+  return Math.min(100, score);
+}
+
+// Primary scanner - DexScreener with better filtering
+async function scanDexScreener() {
+  try {
+    console.log('📊 Scanning DexScreener for opportunities...');
+    
+    // Try multiple endpoints
+    const endpoints = [
+      `${SCANNER_CONFIG.DEXSCREENER_API}/search/?q=volume`,
+      `${SCANNER_CONFIG.DEXSCREENER_API}/tokens/solana`
+    ];
+    
+    let response = null;
+    
+    for (const endpoint of endpoints) {
+      try {
+        response = await axios.get(endpoint, {
+          timeout: 10000,
+          headers: {
+            'Accept': 'application/json',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+          }
+        });
+        if (response.data) break;
+      } catch (err) {
+        console.log(`Trying next endpoint...`);
+      }
+    }
+    
+    if (!response?.data?.pairs) {
+      console.log('No data from DexScreener');
+      return [];
+    }
+    
+    const tokens = [];
+    const now = Date.now();
+    
+    for (const pair of response.data.pairs) {
+      try {
+        // Skip if not Solana
+        if (pair.chainId !== 'solana') continue;
+        if (!pair.baseToken?.address) continue;
+        
+        const volume = parseFloat(pair.volume?.h24 || 0);
+        const liquidity = parseFloat(pair.liquidity?.usd || 0);
+        const priceChange = parseFloat(pair.priceChange?.h24 || 0);
+        const age = now - (pair.pairCreatedAt || 0);
+        
+        // Apply filters
+        if (volume < SCANNER_CONFIG.MIN_VOLUME_24H) continue;
+        if (liquidity < SCANNER_CONFIG.MIN_LIQUIDITY_USD) continue;
+        if (age > SCANNER_CONFIG.MAX_TOKEN_AGE) continue;
+        
+        // Calculate score
+        let score = 60;
+        if (volume > 100000) score += 20;
+        else if (volume > 50000) score += 15;
+        else if (volume > 20000) score += 10;
+        
+        if (priceChange > 50) score += 10;
+        else if (priceChange > 20) score += 5;
+        
+        const liquidityScore = analyzeLiquidity(volume, liquidity);
+        score = Math.floor((score + liquidityScore) / 2);
+        
+        tokens.push({
+          mint: pair.baseToken.address,
+          symbol: pair.baseToken.symbol || 'UNKNOWN',
+          name: pair.baseToken.name || pair.baseToken.symbol,
+          source: 'dexscreener',
+          dex: pair.dexId || 'unknown',
+          marketCap: pair.fdv || 0,
+          volume: volume,
+          liquidity: liquidity,
+          priceChange: priceChange,
+          age: Math.floor(age / 1000 / 60), // minutes
+          score: score,
+          url: pair.url || `https://dexscreener.com/solana/${pair.baseToken.address}`
+        });
+        
+      } catch (err) {
+        // Skip problematic pairs
+      }
+    }
+    
+    return tokens.sort((a, b) => b.score - a.score).slice(0, 20);
+    
+  } catch (error) {
+    console.error('DexScreener error:', error.message);
+    return [];
+  }
+}
+
+// Backup scanner - Birdeye trending tokens
+async function scanBirdeye() {
+  try {
+    console.log('🦅 Checking Birdeye for trending tokens...');
+    
+    const response = await axios.get(
+      `${SCANNER_CONFIG.BIRDEYE_API}/defi/v2/tokens/trending`,
+      {
+        params: {
+          chain: 'solana',
+          limit: 20,
+          sort_by: 'volume24h',
+          sort_type: 'desc'
+        },
+        headers: {
+          'Accept': 'application/json',
+          'x-api-key': process.env.BIRDEYE_API_KEY || ''
+        },
+        timeout: 5000
+      }
+    ).catch(() => null);
+    
+    if (!response?.data?.data) {
+      console.log('No Birdeye data available');
+      return [];
+    }
+    
+    const tokens = [];
+    
+    for (const token of response.data.data) {
+      if (token.liquidity < SCANNER_CONFIG.MIN_LIQUIDITY_USD) continue;
+      if (token.volume24h < SCANNER_CONFIG.MIN_VOLUME_24H) continue;
+      
+      tokens.push({
+        mint: token.address,
+        symbol: token.symbol,
+        name: token.name,
+        source: 'birdeye',
+        marketCap: token.mc || 0,
+        volume: token.volume24h || 0,
+        liquidity: token.liquidity || 0,
+        priceChange: token.priceChange24h || 0,
+        score: 70, // Base score for Birdeye trending
+        url: `https://birdeye.so/token/${token.address}?chain=solana`
+      });
+    }
+    
+    return tokens;
+    
+  } catch (error) {
+    console.log('Birdeye not available');
+    return [];
+  }
+}
+
+// Simple Raydium scanner via DexScreener
+async function scanRaydiumTokens() {
+  try {
+    console.log('🌊 Finding Raydium pools via DexScreener...');
+    
+    const response = await axios.get(
+      `${SCANNER_CONFIG.DEXSCREENER_API}/tokens/solana`,
+      {
+        timeout: 5000,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }
+    );
+    
+    if (!response.data?.pairs) return [];
+    
+    // Filter for Raydium pools only
+    const raydiumPairs = response.data.pairs.filter(p => 
+      p.dexId === 'raydium' && 
+      parseFloat(p.liquidity?.usd || 0) >= SCANNER_CONFIG.MIN_LIQUIDITY_USD
+    );
+    
+    console.log(`Found ${raydiumPairs.length} Raydium pairs`);
+    
+    return raydiumPairs.slice(0, 10).map(pair => ({
+      mint: pair.baseToken.address,
+      symbol: pair.baseToken.symbol,
+      name: pair.baseToken.name,
+      source: 'raydium',
+      volume: parseFloat(pair.volume?.h24 || 0),
+      liquidity: parseFloat(pair.liquidity?.usd || 0),
+      priceChange: parseFloat(pair.priceChange?.h24 || 0),
+      score: 75,
+      url: pair.url
+    }));
+    
+  } catch (error) {
+    console.log('Raydium scan via DexScreener failed');
+    return [];
+  }
+}
+
+// Main scanner
+async function scanAllTokens() {
+  console.log('🚀 Starting multi-source token scan...\n');
+  
+  try {
+    // Run all scanners
+    const [dexTokens, birdeyeTokens, raydiumTokens] = await Promise.all([
+      scanDexScreener(),
+      scanBirdeye(),
+      scanRaydiumTokens()
+    ]);
+    
+    console.log(`📊 Results:`);
+    console.log(`   DexScreener: ${dexTokens.length} tokens`);
+    console.log(`   Birdeye: ${birdeyeTokens.length} tokens`);
+    console.log(`   Raydium: ${raydiumTokens.length} tokens`);
+    
+    // Combine and deduplicate
+    const tokenMap = new Map();
+    
+    [...dexTokens, ...birdeyeTokens, ...raydiumTokens].forEach(token => {
+      const existing = tokenMap.get(token.mint);
+      if (!existing || token.score > existing.score) {
+        tokenMap.set(token.mint, {
+          ...token,
+          sources: existing ? [...existing.sources, token.source] : [token.source]
+        });
+      }
+    });
+    
+    const allTokens = Array.from(tokenMap.values())
+      .sort((a, b) => b.score - a.score);
+    
+    console.log(`   Total unique: ${allTokens.length} tokens\n`);
+    
+    // Show top 5
+    if (allTokens.length > 0) {
+      console.log('🏆 Top Opportunities:');
+      allTokens.slice(0, 5).forEach((token, i) => {
+        console.log(`${i + 1}. ${token.symbol} - Score: ${token.score}`);
+        console.log(`   Volume: $${token.volume?.toLocaleString() || 'N/A'}`);
+        console.log(`   Liquidity: $${token.liquidity?.toLocaleString() || 'N/A'}`);
+        if (token.priceChange) {
+          console.log(`   24h: ${token.priceChange > 0 ? '+' : ''}${token.priceChange.toFixed(1)}%`);
+        }
+      });
+    }
+    
+    return allTokens;
+    
+  } catch (error) {
+    console.error('Scanner error:', error.message);
+    return [];
+  }
+}
+
+// Export all functions
+module.exports = {
+  scanDexScreener,
+  scanBirdeye,
+  scanRaydiumTokens,
+  scanAllTokens,
+  
+  // Compatibility
+  scanJupiterTokens: scanBirdeye,
+  scanPumpTokens: async () => {
+    console.log('🎯 Scanning via DexScreener (includes Pump graduations)');
+    return scanDexScreener();
+  }
+};
+EOF
+
+# Also copy to dist if it exists
+if [ -d "dist/pumpTools" ]; then
+    echo "📋 Copying to dist folder..."
+    cp src/pumpTools/tokenScanner.js dist/pumpTools/tokenScanner.js
+fi
+
+echo "✅ Enhanced scanner installed!"
+
+# Test it
+echo -e "\n🧪 Testing scanner..."
+export $(cat .env.scanner | grep -v '^#' | xargs) && node -e "
+const { scanAllTokens } = require('./src/pumpTools/tokenScanner');
+scanAllTokens().then(tokens => {
+  console.log(\`\n✅ Scanner working! Found \${tokens.length} tokens\`);
+  if (tokens.length > 0) {
+    const t = tokens[0];
+    console.log(\`\nTop token: \${t.symbol}\`);
+    console.log(\`Score: \${t.score}\`);
+    console.log(\`Volume: $\${t.volume?.toLocaleString() || 'N/A'}\`);
+    console.log(\`Liquidity: $\${t.liquidity?.toLocaleString() || 'N/A'}\`);
+  }
+}).catch(err => console.error('Error:', err.message));
+"
+
+echo -e "\n✨ Installation complete!"
+echo "The scanner now uses:"
+echo "  📊 DexScreener API (primary source)"
+echo "  🦅 Birdeye trending tokens (if API key set)"
+echo "  🌊 Raydium pools via DexScreener"
+echo "  💧 Liquidity filtering built-in"
+echo -e "\n🦉 Ready to find better opportunities!"

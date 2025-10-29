@@ -1,3 +1,4 @@
+const { updateBandit } = require('./adaptive');
 // /Users/owner/Desktop/HootBot/src/ai/learning/feedback.js
 // Capture outcomes with M.I.N.D. features - Foundation for learning
 
@@ -119,6 +120,9 @@ function recordTradeResult({ directive, result, marketSnapshot }) {
     // Add to memory buffer
     memoryBuffer.push(outcome);
     
+    // UPDATE BANDIT WITH TRADE OUTCOME
+    updateBandit(directive.threshold || 0.7, outcome.profitLoss);
+
     // Log for monitoring
     console.log(`📊 Trade recorded: ${directive.tokenMint?.slice(0, 8)}... - Action: ${outcome.decision} - P/L: ${(outcome.profitLoss * 100).toFixed(2)}%`);
     

@@ -1,0 +1,53 @@
+{
+  "sessionId": "session_1754863062954",
+  "startTime": "2025-08-10T21:57:42.954Z",
+  "endTime": null,
+  "runtime": "0.2",
+  "cyclesCompleted": 0,
+  "tokensAnalyzed": {},
+  "tokenDetails": [],
+  "trades": [],
+  "mindAnalyses": [
+    {
+      "timestamp": 1754863077340,
+      "survivabilityScore": 100,
+      "action": "BUY",
+      "suggestedPercentage": 75,
+      "reason": "💎 STRONG BUY: 68% confidence + whale accumulation",
+      "panicScore": 0,
+      "marketFlowStrength": 25,
+      "riskLevel": "low",
+      "whaleActivity": true,
+      "confidenceScore": 68,
+      "consumerProfile": {
+        "shrimpPercent": 84.82613277133825,
+        "dolphinPercent": 0.31612223393045313,
+        "whalePercent": 14.857744994731295
+      }
+    }
+  ],
+  "actionCounts": {
+    "BUY": 1,
+    "SELL": 0,
+    "HOLD": 0,
+    "PAUSE": 0,
+    "EXIT": 0
+  },
+  "profitMetrics": {
+    "totalSpent": 0,
+    "totalEarned": 0,
+    "netProfit": 0,
+    "winningTrades": 0,
+    "losingTrades": 0,
+    "successRate": 0
+  },
+  "marketConditions": {
+    "averageSurvivability": 0,
+    "averagePanicScore": 0,
+    "averageFlowStrength": 0,
+    "bullishCycles": 0,
+    "bearishCycles": 0
+  },
+  "uniqueTokensCount": 0,
+  "lastUpdated": "2025-08-10T21:57:57.340Z"
+}
